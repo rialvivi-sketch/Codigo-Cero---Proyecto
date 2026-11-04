@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dx4yeh7tdoo6p"]
+
+[ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/Fondo.png" id="1_lti8b"]
+
+[node name="Menu" type="Control" unique_id=867860551]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1612010117]
+layout_mode = 0
+offset_top = -39.0
+offset_right = 500.0
+offset_bottom = 161.0
+texture = ExtResource("1_lti8b")
