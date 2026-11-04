@@ -26,6 +26,10 @@ window/size/viewport_height=160
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Codigo Cero"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
