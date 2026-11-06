@@ -17,9 +17,6 @@ load_path = "res://.godot/imported/CimaMenu.png-fa1653398d341d649f370fece6c064da
 
 [sub_resource type="GDScript" id="GDScript_h1wq0"]
 script/source = "extends TextureButton
-
-
-
 "
 
 [node name="Menu" type="Control" unique_id=867860551]
@@ -57,20 +54,22 @@ texture_normal = ExtResource("2_a1ang")
 
 [node name="BotonJugar" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=294313000]
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("2_ftgnq")
 texture_pressed = ExtResource("3_a1ang")
 texture_hover = ExtResource("4_oeqfb")
-stretch_mode = 0
 script = SubResource("GDScript_h1wq0")
 
 [node name="TextureButtonNaves" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=740518364]
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("5_nme5s")
 texture_pressed = ExtResource("6_q5mo8")
 texture_hover = ExtResource("7_08ws6")
 
 [node name="BotonSalir" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=457480983]
 layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("8_f7xxo")
 texture_pressed = ExtResource("9_2g3rp")
 texture_hover = ExtResource("10_iwhjx")
