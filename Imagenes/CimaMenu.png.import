@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6x2moy6p222p"
-path="res://.godot/imported/BotonSalirPressed.png-59dae116b938a9d32d971c3d4cab4c1d.ctex"
+uid="uid://y33ufdkss87o"
+path="res://.godot/imported/CimaMenu.png-fa1653398d341d649f370fece6c064da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/BotonSalirPressed.png"
-dest_files=["res://.godot/imported/BotonSalirPressed.png-59dae116b938a9d32d971c3d4cab4c1d.ctex"]
+source_file="res://Imagenes/CimaMenu.png"
+dest_files=["res://.godot/imported/CimaMenu.png-fa1653398d341d649f370fece6c064da.ctex"]
 
 [params]
 

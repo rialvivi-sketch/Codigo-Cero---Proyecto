@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://irrvyfwqoa4t"
-path="res://.godot/imported/BotonJugarPressed.png-ceb56e8fffcf62c72561f684ebea5b65.ctex"
+uid="uid://cpabg2i8x867e"
+path="res://.godot/imported/CimaNave.png-529717725656323f57f527649d600716.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/BotonJugarPressed.png"
-dest_files=["res://.godot/imported/BotonJugarPressed.png-ceb56e8fffcf62c72561f684ebea5b65.ctex"]
+source_file="res://Imagenes/CimaNave.png"
+dest_files=["res://.godot/imported/CimaNave.png-529717725656323f57f527649d600716.ctex"]
 
 [params]
 
