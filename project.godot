@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Codigo Cero"
+config/name="Cima Galactic"
 run/main_scene="uid://dx4yeh7tdoo6p"
-config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
+config/icon="uid://egpjwahuvlba"
 
 [autoload]
 
