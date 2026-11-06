@@ -4,20 +4,14 @@
 [ext_resource type="Script" uid="uid://bv3n4aw407jmq" path="res://Escenas/character_body_2d.gd" id="2_20qyh"]
 [ext_resource type="Texture2D" uid="uid://cpabg2i8x867e" path="res://Imagenes/CimaNave.png" id="2_dhn5r"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
+size = Vector2(17, 152)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cim2"]
 size = Vector2(30, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p23x"]
-size = Vector2(276.5, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
-size = Vector2(17, 144)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0klr0"]
-size = Vector2(287, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5mbm"]
-size = Vector2(20, 156)
+size = Vector2(287, 12)
 
 [node name="Nivel1" type="Node2D" unique_id=1933223351]
 
@@ -39,6 +33,13 @@ size = Vector2(20, 156)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Escritorios" unique_id=282780618]
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1492729950]
+constant_linear_velocity = Vector2(0, 324)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=585613305]
+position = Vector2(-4, 83)
+shape = SubResource("RectangleShape2D_v8yid")
+
 [node name="Node2D" type="Node2D" parent="." unique_id=1049451231]
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1495285342]
@@ -53,35 +54,20 @@ script = ExtResource("2_20qyh")
 position = Vector2(33, 75)
 shape = SubResource("RectangleShape2D_8cim2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1791035881]
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1791035881]
 position = Vector2(32, 80)
 texture = ExtResource("2_dhn5r")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/CharacterBody2D" unique_id=829498594]
-constant_linear_velocity = Vector2(576, 648)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D/StaticBody2D" unique_id=1993444031]
-position = Vector2(137.75, 153)
-shape = SubResource("RectangleShape2D_7p23x")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/CharacterBody2D" unique_id=1492729950]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D" unique_id=434143325]
 constant_linear_velocity = Vector2(0, 324)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/CharacterBody2D/StaticBody2D2" unique_id=585613305]
-position = Vector2(-4, 79)
-shape = SubResource("RectangleShape2D_v8yid")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D/CharacterBody2D" unique_id=860980642]
-constant_linear_velocity = Vector2(1152, 324)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/CharacterBody2D/StaticBody2D3" unique_id=1181185911]
-position = Vector2(143.5, 0)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/StaticBody2D4" unique_id=2072869742]
+position = Vector2(137, 165)
 shape = SubResource("RectangleShape2D_0klr0")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D/CharacterBody2D" unique_id=434143325]
-position = Vector2(263, 23)
-constant_linear_velocity = Vector2(0, 324)
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D" unique_id=860980642]
+constant_linear_velocity = Vector2(1152, 324)
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/CharacterBody2D/StaticBody2D4" unique_id=487177185]
-position = Vector2(11, 57)
-shape = SubResource("RectangleShape2D_w5mbm")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/StaticBody2D3" unique_id=1181185911]
+position = Vector2(143.5, -4)
+shape = SubResource("RectangleShape2D_0klr0")
