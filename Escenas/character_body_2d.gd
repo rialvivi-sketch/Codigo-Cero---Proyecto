@@ -1,6 +1,10 @@
 extends CharacterBody2D
 @export var speed : float = 200
 
+func _ready() -> void:
+	GLOBAL.score = 0
+	GLOBAL.credits = 1
+	
 func _process(delta):
 	motion_ctrl()
 	

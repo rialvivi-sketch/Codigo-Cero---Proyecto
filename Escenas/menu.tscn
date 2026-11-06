@@ -74,5 +74,10 @@ texture_normal = ExtResource("8_f7xxo")
 texture_pressed = ExtResource("9_2g3rp")
 texture_hover = ExtResource("10_iwhjx")
 
+[node name="settings" type="Node" parent="." unique_id=1175073550]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=338311577]
+autoplay = true
+
 [connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonJugar" to="." method="_on_boton_jugar_pressed"]
 [connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonSalir" to="." method="_on_boton_salir_pressed"]
