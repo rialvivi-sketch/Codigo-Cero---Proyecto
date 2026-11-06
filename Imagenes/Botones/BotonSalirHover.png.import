@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daf20unc3u7jr"
-path="res://.godot/imported/MenuPrincipal_0003.png-283bbacd74669a239a1edc6f5c242ba3.ctex"
+uid="uid://b1bngh65xp6lg"
+path="res://.godot/imported/BotonSalirHover.png-46ccf6745ea5583b4ce06afa4a6af54d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/MenuAnimacion/MenuPrincipal_0003.png"
-dest_files=["res://.godot/imported/MenuPrincipal_0003.png-283bbacd74669a239a1edc6f5c242ba3.ctex"]
+source_file="res://Imagenes/Botones/BotonSalirHover.png"
+dest_files=["res://.godot/imported/BotonSalirHover.png-46ccf6745ea5583b4ce06afa4a6af54d.ctex"]
 
 [params]
 

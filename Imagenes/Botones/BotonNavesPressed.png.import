@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e2l4sf2vvssm"
-path="res://.godot/imported/MenuPrincipal_0002.png-c50f50ddcf2a227ebbda4007c0311caf.ctex"
+uid="uid://dgc48duyahll2"
+path="res://.godot/imported/BotonNavesPressed.png-19d29924fb8b3fcccd2951968ace3526.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/MenuAnimacion/MenuPrincipal_0002.png"
-dest_files=["res://.godot/imported/MenuPrincipal_0002.png-c50f50ddcf2a227ebbda4007c0311caf.ctex"]
+source_file="res://Imagenes/Botones/BotonNavesPressed.png"
+dest_files=["res://.godot/imported/BotonNavesPressed.png-19d29924fb8b3fcccd2951968ace3526.ctex"]
 
 [params]
 

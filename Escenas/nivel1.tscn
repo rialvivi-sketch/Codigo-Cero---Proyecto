@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5t1oubnmmh2m"]
+
+[node name="Nivel1" type="Node2D" unique_id=1933223351]
+
+[node name="Fondo" type="Node" parent="." unique_id=2057209537]
+
+[node name="Back" type="ParallaxBackground" parent="Fondo" unique_id=952381386]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Back" unique_id=1535201692]
+
+[node name="Planetas" type="ParallaxBackground" parent="Fondo" unique_id=1280040434]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Planetas" unique_id=167679896]
+
+[node name="Ventanales" type="ParallaxBackground" parent="Fondo" unique_id=2130750916]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Ventanales" unique_id=593956180]
+
+[node name="Escritorios" type="ParallaxBackground" parent="Fondo" unique_id=1718562936]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Escritorios" unique_id=282780618]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv8icdy54xvqx"
-path="res://.godot/imported/BotonSalir.png-10a45d0c210aa3b65406daed47f84a1a.ctex"
+uid="uid://b13s5cg8iuk6t"
+path="res://.godot/imported/BotonJugarPressed.png-4bb76c8bd30519a96ca99931ad758459.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/BotonSalir.png"
-dest_files=["res://.godot/imported/BotonSalir.png-10a45d0c210aa3b65406daed47f84a1a.ctex"]
+source_file="res://Imagenes/Botones/BotonJugarPressed.png"
+dest_files=["res://.godot/imported/BotonJugarPressed.png-4bb76c8bd30519a96ca99931ad758459.ctex"]
 
 [params]
 

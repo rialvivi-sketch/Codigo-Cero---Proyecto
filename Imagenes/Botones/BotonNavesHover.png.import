@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lwwki0723vs2"
-path="res://.godot/imported/BotonJugar.png-2725866318ff14a6373a523f63ad7c47.ctex"
+uid="uid://b1cyyrtspwwbl"
+path="res://.godot/imported/BotonNavesHover.png-172ab0b2c78ca495f35172cb24a14029.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/BotonJugar.png"
-dest_files=["res://.godot/imported/BotonJugar.png-2725866318ff14a6373a523f63ad7c47.ctex"]
+source_file="res://Imagenes/Botones/BotonNavesHover.png"
+dest_files=["res://.godot/imported/BotonNavesHover.png-172ab0b2c78ca495f35172cb24a14029.ctex"]
 
 [params]
 
