@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpabg2i8x867e"
-path="res://.godot/imported/CimaNave.png-529717725656323f57f527649d600716.ctex"
+uid="uid://5vxqdn6nete7"
+path="res://.godot/imported/Enemigo1.png-54df0e0d4021efbb18bfed20d04cb98b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/CimaNave.png"
-dest_files=["res://.godot/imported/CimaNave.png-529717725656323f57f527649d600716.ctex"]
+source_file="res://Imagenes/enemigos/Enemigo1.png"
+dest_files=["res://.godot/imported/Enemigo1.png-54df0e0d4021efbb18bfed20d04cb98b.ctex"]
 
 [params]
 

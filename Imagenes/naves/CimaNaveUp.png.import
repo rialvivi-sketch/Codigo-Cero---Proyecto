@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h38qo38neib3"
-path="res://.godot/imported/Fondo.png-f70fddc52b2ce5f8778f299744904cb4.ctex"
+uid="uid://ibreyosmlic5"
+path="res://.godot/imported/CimaNaveUp.png-c0abcce4003df7cd21a7cf0cfcaa391a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/Fondo.png"
-dest_files=["res://.godot/imported/Fondo.png-f70fddc52b2ce5f8778f299744904cb4.ctex"]
+source_file="res://Imagenes/naves/CimaNaveUp.png"
+dest_files=["res://.godot/imported/CimaNaveUp.png-c0abcce4003df7cd21a7cf0cfcaa391a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcpet1mvb82qk"
-path="res://.godot/imported/CimaNaveDown.png-6166dbb78bfd5d391035dc02929cef5f.ctex"
+uid="uid://c2rrcrrcg7p8h"
+path="res://.godot/imported/MenuPrincipal_0001.png-ddff165642b7d355f3e6743eb7fb8cff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/CimaNaveDown.png"
-dest_files=["res://.godot/imported/CimaNaveDown.png-6166dbb78bfd5d391035dc02929cef5f.ctex"]
+source_file="res://Imagenes/fondos/MenuPrincipal_0001.png"
+dest_files=["res://.godot/imported/MenuPrincipal_0001.png-ddff165642b7d355f3e6743eb7fb8cff.ctex"]
 
 [params]
 

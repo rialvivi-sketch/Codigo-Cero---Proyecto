@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b5t1oubnmmh2m"]
 
-[ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/Fondo.png" id="1_8d1es"]
-[ext_resource type="Script" uid="uid://bv3n4aw407jmq" path="res://Escenas/character_body_2d.gd" id="2_20qyh"]
-[ext_resource type="Texture2D" uid="uid://cpabg2i8x867e" path="res://Imagenes/CimaNave.png" id="2_dhn5r"]
+[ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/nivel_1.gd" id="1_c6wl6"]
+[ext_resource type="Script" uid="uid://bv3n4aw407jmq" path="res://Scripts/character_body_2d.gd" id="2_20qyh"]
+[ext_resource type="Texture2D" uid="uid://cpabg2i8x867e" path="res://Imagenes/naves/CimaNave.png" id="2_dhn5r"]
+[ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="2_k5unv"]
+[ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="5_w707c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
 size = Vector2(17, 152)
@@ -20,16 +22,28 @@ _data = {
 point_count = 6
 
 [node name="Nivel1" type="Node2D" unique_id=1933223351]
+script = ExtResource("1_c6wl6")
 
 [node name="Fondo" type="Node" parent="." unique_id=2057209537]
 
 [node name="Back" type="ParallaxBackground" parent="Fondo" unique_id=952381386]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Back" unique_id=1535201692]
+motion_mirroring = Vector2(272, 0)
 
-[node name="Planetas" type="ParallaxBackground" parent="Fondo" unique_id=1280040434]
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1495285342]
+position = Vector2(135.5, 80)
+scale = Vector2(0.5459999, 0.8)
+texture = ExtResource("2_k5unv")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Planetas" unique_id=167679896]
+[node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=1280040434]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Edificios" unique_id=167679896]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Edificios/ParallaxLayer" unique_id=1488092006]
+position = Vector2(135.00002, 76)
+scale = Vector2(0.54399997, 0.78000003)
 
 [node name="Ventanales" type="ParallaxBackground" parent="Fondo" unique_id=2130750916]
 
@@ -48,19 +62,14 @@ constant_linear_velocity = Vector2(0, 324)
 position = Vector2(-4, 83)
 shape = SubResource("RectangleShape2D_v8yid")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1495285342]
-position = Vector2(135.5, 80)
-scale = Vector2(0.5459999, 0.8)
-texture = ExtResource("1_8d1es")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=1317266404]
+[node name="Player" type="CharacterBody2D" parent="Node2D" unique_id=1317266404]
 script = ExtResource("2_20qyh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D" unique_id=1354478193]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player" unique_id=1354478193]
 position = Vector2(33, 75)
 shape = SubResource("RectangleShape2D_8cim2")
 
-[node name="nave" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=1791035881]
+[node name="nave" type="Sprite2D" parent="Node2D/Player" unique_id=1791035881]
 position = Vector2(32, 80)
 texture = ExtResource("2_dhn5r")
 
@@ -85,3 +94,9 @@ curve = SubResource("Curve2D_20qyh")
 position = Vector2(269, 155)
 rotation = -1.5642605
 scale = Vector2(1, -9.346)
+
+[node name="Settings" type="Node" parent="." unique_id=802312014]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=1018737733]
+stream = ExtResource("5_w707c")
+autoplay = true

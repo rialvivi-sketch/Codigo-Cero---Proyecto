@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2rrcrrcg7p8h"
-path="res://.godot/imported/MenuPrincipal_0001.png-c9cd4399c4dff3413e73968ad70e19f5.ctex"
+uid="uid://y33ufdkss87o"
+path="res://.godot/imported/CimaMenu.png-e19d287ae3d68c67d1018c23cc5b9f7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/MenuPrincipal_0001.png"
-dest_files=["res://.godot/imported/MenuPrincipal_0001.png-c9cd4399c4dff3413e73968ad70e19f5.ctex"]
+source_file="res://Imagenes/fondos/CimaMenu.png"
+dest_files=["res://.godot/imported/CimaMenu.png-e19d287ae3d68c67d1018c23cc5b9f7b.ctex"]
 
 [params]
 

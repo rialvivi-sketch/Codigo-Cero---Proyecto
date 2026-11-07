@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj22hk4kmhs0c"
-path="res://.godot/imported/Enemigo2.png-86506c870eb9c0fc960d65903133420d.ctex"
+uid="uid://dcpet1mvb82qk"
+path="res://.godot/imported/CimaNaveDown.png-6f9c961b4bcc06ec39a939164ef7b212.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/Enemigo2.png"
-dest_files=["res://.godot/imported/Enemigo2.png-86506c870eb9c0fc960d65903133420d.ctex"]
+source_file="res://Imagenes/naves/CimaNaveDown.png"
+dest_files=["res://.godot/imported/CimaNaveDown.png-6f9c961b4bcc06ec39a939164ef7b212.ctex"]
 
 [params]
 
