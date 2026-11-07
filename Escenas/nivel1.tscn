@@ -15,9 +15,9 @@ size = Vector2(287, 12)
 
 [sub_resource type="Curve2D" id="Curve2D_20qyh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 269, 155, 0, 0, 0, 0, 270, 2, 0, 0, 0, 0, 264, 1, 0, 0, 0, 0, 264, 155, 0, 0, 0, 0, 269, 155)
+"points": PackedVector2Array(0, 0, 0, 0, 269, 155, 0, 0, 0, 0, 270, 2, 0, 0, 0, 0, 264, 1, 0, 0, 0, 0, 266, 97, 0, 0, 0, 0, 264, 155, 0, 0, 0, 0, 269, 155)
 }
-point_count = 5
+point_count = 6
 
 [node name="Nivel1" type="Node2D" unique_id=1933223351]
 
