@@ -16,10 +16,6 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h1wq0"]
 load_path = "res://.godot/imported/CimaMenu.png-fa1653398d341d649f370fece6c064da.ctex"
 
-[sub_resource type="GDScript" id="GDScript_h1wq0"]
-script/source = "extends TextureButton
-"
-
 [node name="Menu" type="Control" unique_id=867860551]
 layout_mode = 3
 anchors_preset = 15
@@ -59,9 +55,8 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("2_ftgnq")
 texture_pressed = ExtResource("3_a1ang")
 texture_hover = ExtResource("4_oeqfb")
-script = SubResource("GDScript_h1wq0")
 
-[node name="TextureButtonNaves" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=740518364]
+[node name="BotonNaves" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=740518364]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_nme5s")
@@ -82,4 +77,5 @@ stream = ExtResource("12_a1ang")
 autoplay = true
 
 [connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonNaves" to="." method="_on_boton_naves_pressed"]
 [connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonSalir" to="." method="_on_boton_salir_pressed"]

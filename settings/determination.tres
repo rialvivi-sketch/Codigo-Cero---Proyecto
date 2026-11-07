@@ -1,7 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://bwcgdtkau5qvj"]
 
-[ext_resource type="FontFile" uid="uid://bjwkd6wqbxjug" path="res://settings/DeterminationSansWebRegular-369X.ttf" id="1_ropy0"]
+[ext_resource type="FontFile" uid="uid://bjwkd6wqbxjug" path="res://settings/DeterminationSansWebRegular-369X.ttf" id="1_4kde1"]
 
 [resource]
-default_font = ExtResource("1_ropy0")
+default_font = ExtResource("1_4kde1")
 default_font_size = 16
+Label/colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+Label/fonts/font = ExtResource("1_4kde1")
