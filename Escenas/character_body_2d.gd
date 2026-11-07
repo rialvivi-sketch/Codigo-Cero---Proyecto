@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var speed : float = 200
+@export var speed : float = 100
 
 func _ready() -> void:
 	GLOBAL.score = 0
