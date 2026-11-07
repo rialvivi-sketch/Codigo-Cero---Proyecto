@@ -19,7 +19,7 @@ func anim_ctrl() -> void:
 	if GLOBAL.get_axis().y > 0:
 		$Spaceship.animation = "up"
 	elif GLOBAL.get_axis().y < 0:
-		$Spaceship.animation = "Down"
+		$Spaceship.animation = "down"
 	else:
 		$Spaceship.animation = "idle"
 		
@@ -32,9 +32,8 @@ func motion_ctrl() -> void:
 	position.y = clamp(position.y, 0, screensize.y)
 	
 func shoot_ctrl() -> void:
-	$Flash.play("Flash")
+	$Flash.play("flash")
 	$settings/AudioStreamPlayer.play()
-	
 	var shot_instance = shot.instantiate()
 	shot_instance.global_position = $settings/ShootSpawn.global_position
 	get_tree().call_group("Level", "add_child", shot_instance)

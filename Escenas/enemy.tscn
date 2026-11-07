@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
-size = Vector2(211, 86)
+size = Vector2(33.5, 26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iifgy"]
 animations = [{
@@ -31,13 +31,13 @@ script = ExtResource("1_yj12m")
 [node name="Area2D" type="Area2D" parent="." unique_id=1339951585 groups=["enemy"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1763963315]
-position = Vector2(145, 82.00001)
-scale = Vector2(5.7187448, 4.6383724)
+position = Vector2(235, 103)
+scale = Vector2(0.9218725, 0.91293645)
 sprite_frames = SubResource("SpriteFrames_7p23x")
 animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=436652121]
-position = Vector2(146, 71)
+position = Vector2(234.75, 101)
 shape = SubResource("RectangleShape2D_v8yid")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Area2D" unique_id=1583202759]

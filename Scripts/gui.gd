@@ -1,5 +1,5 @@
 extends CanvasLayer
 
 func _process(_delta):
-	%Credits.text = "CREDITS: " + str(GLOBAL.credit)
-	%Score.text = "SCORE: " + str(GLOBAL.score)
+	%credits.text = "CREDITS: " + str(GLOBAL.credits)
+	%score.text = "SCORE: " + str(GLOBAL.score)

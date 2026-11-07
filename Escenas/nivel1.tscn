@@ -1,19 +1,11 @@
 [gd_scene format=3 uid="uid://b5t1oubnmmh2m"]
 
-[ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/nivel_1.gd" id="1_c6wl6"]
-[ext_resource type="Script" uid="uid://bv3n4aw407jmq" path="res://Scripts/character_body_2d.gd" id="2_20qyh"]
-[ext_resource type="Texture2D" uid="uid://cpabg2i8x867e" path="res://Imagenes/naves/CimaNave.png" id="2_dhn5r"]
+[ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/level1.gd" id="1_c6wl6"]
+[ext_resource type="PackedScene" uid="uid://46kgkntlfy4e" path="res://Escenas/gui.tscn" id="2_c6wl6"]
 [ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="2_k5unv"]
+[ext_resource type="PackedScene" uid="uid://cwku52h0vx6i1" path="res://Escenas/enemy.tscn" id="2_w707c"]
+[ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="5_ibtyg"]
 [ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="5_w707c"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
-size = Vector2(17, 152)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cim2"]
-size = Vector2(30, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0klr0"]
-size = Vector2(287, 12)
 
 [sub_resource type="Curve2D" id="Curve2D_20qyh"]
 _data = {
@@ -21,8 +13,21 @@ _data = {
 }
 point_count = 6
 
-[node name="Nivel1" type="Node2D" unique_id=1933223351]
+[node name="Leve1" type="Node2D" unique_id=1933223351 groups=["Level"]]
 script = ExtResource("1_c6wl6")
+enemy = ExtResource("2_w707c")
+
+[node name="GUI" parent="." unique_id=840462096 instance=ExtResource("2_c6wl6")]
+
+[node name="Settings" type="Node" parent="." unique_id=802312014]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=1018737733]
+stream = ExtResource("5_w707c")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="Settings" unique_id=451912008]
+wait_time = 0.92
+autostart = true
 
 [node name="Fondo" type="Node" parent="." unique_id=2057209537]
 
@@ -48,55 +53,25 @@ scale = Vector2(0.54399997, 0.78000003)
 [node name="Ventanales" type="ParallaxBackground" parent="Fondo" unique_id=2130750916]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Ventanales" unique_id=593956180]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Ventanales/ParallaxLayer" unique_id=1739579027]
 
 [node name="Escritorios" type="ParallaxBackground" parent="Fondo" unique_id=1718562936]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Escritorios" unique_id=282780618]
+motion_mirroring = Vector2(272, 0)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1049451231]
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Escritorios/ParallaxLayer" unique_id=645810015]
 
-[node name="limite izquierdo" type="StaticBody2D" parent="Node2D" unique_id=1492729950]
-constant_linear_velocity = Vector2(0, 324)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/limite izquierdo" unique_id=585613305]
-position = Vector2(-4, 83)
-shape = SubResource("RectangleShape2D_v8yid")
-
-[node name="Player" type="CharacterBody2D" parent="Node2D" unique_id=1317266404]
-script = ExtResource("2_20qyh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player" unique_id=1354478193]
-position = Vector2(33, 75)
-shape = SubResource("RectangleShape2D_8cim2")
-
-[node name="nave" type="Sprite2D" parent="Node2D/Player" unique_id=1791035881]
-position = Vector2(32, 80)
-texture = ExtResource("2_dhn5r")
-
-[node name="limite inferior" type="StaticBody2D" parent="Node2D" unique_id=434143325]
-constant_linear_velocity = Vector2(0, 324)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/limite inferior" unique_id=2072869742]
-position = Vector2(137, 165)
-shape = SubResource("RectangleShape2D_0klr0")
-
-[node name="limite superior" type="StaticBody2D" parent="Node2D" unique_id=860980642]
-constant_linear_velocity = Vector2(1152, 324)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/limite superior" unique_id=1181185911]
-position = Vector2(143.5, -4)
-shape = SubResource("RectangleShape2D_0klr0")
-
-[node name="Path2D" type="Path2D" parent="." unique_id=812356629]
+[node name="PathSpawn" type="Path2D" parent="." unique_id=812356629]
 curve = SubResource("Curve2D_20qyh")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1582797739]
+[node name="PathFollow" type="PathFollow2D" parent="PathSpawn" unique_id=1582797739]
 position = Vector2(269, 155)
 rotation = -1.5642605
 scale = Vector2(1, -9.346)
 
-[node name="Settings" type="Node" parent="." unique_id=802312014]
+[node name="Player" parent="." unique_id=1450505883 instance=ExtResource("5_ibtyg")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=1018737733]
-stream = ExtResource("5_w707c")
-autoplay = true
+[connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]

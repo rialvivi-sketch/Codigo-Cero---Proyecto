@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dq3exaon34km5" path="res://Scripts/control.gd" id="1_kwdw2"]
 [ext_resource type="Texture2D" uid="uid://dcpet1mvb82qk" path="res://Imagenes/naves/CimaNaveDown.png" id="2_j2dk4"]
+[ext_resource type="PackedScene" uid="uid://bcqsmvpv70te0" path="res://Escenas/shot.tscn" id="2_urfe6"]
 [ext_resource type="Texture2D" uid="uid://cpabg2i8x867e" path="res://Imagenes/naves/CimaNave.png" id="3_urfe6"]
 [ext_resource type="Texture2D" uid="uid://ibreyosmlic5" path="res://Imagenes/naves/CimaNaveUp.png" id="4_mok4h"]
 [ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="5_t27sq"]
@@ -49,33 +50,36 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5mbm"]
-size = Vector2(142.5, 58)
+size = Vector2(40.25, 18)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1450505883]
+[node name="Player" type="CharacterBody2D" unique_id=1450505883]
 motion_mode = 1
 script = ExtResource("1_kwdw2")
+shot = ExtResource("2_urfe6")
 
 [node name="Spaceship" type="AnimatedSprite2D" parent="." unique_id=1242066182]
-position = Vector2(195.5, 114)
-scale = Vector2(4.46875, 3.5)
+position = Vector2(43.000004, 82.25)
+scale = Vector2(1.1249996, 0.6406255)
 sprite_frames = SubResource("SpriteFrames_7p23x")
 animation = &"idle"
 metadata/_edit_lock_ = true
 
 [node name="Flash" type="AnimatedSprite2D" parent="." unique_id=69935873]
+position = Vector2(67, 81)
+scale = Vector2(0.6136365, 0.7500002)
 sprite_frames = SubResource("SpriteFrames_v8yid")
 animation = &"flash"
 frame = 1
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1301764242]
-position = Vector2(200, 106)
+position = Vector2(42.875, 81)
 shape = SubResource("RectangleShape2D_w5mbm")
 metadata/_edit_lock_ = true
 
 [node name="settings" type="Node2D" parent="." unique_id=1172282557]
 
 [node name="ShootSpawn" type="Marker2D" parent="settings" unique_id=1538735139]
-position = Vector2(270, 105)
+position = Vector2(61, 81)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=340950297]
 stream = ExtResource("6_3tm5s")
