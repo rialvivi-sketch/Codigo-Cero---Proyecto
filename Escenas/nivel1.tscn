@@ -13,6 +13,12 @@ size = Vector2(30, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0klr0"]
 size = Vector2(287, 12)
 
+[sub_resource type="Curve2D" id="Curve2D_20qyh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 269, 155, 0, 0, 0, 0, 270, 2, 0, 0, 0, 0, 264, 1, 0, 0, 0, 0, 264, 155, 0, 0, 0, 0, 269, 155)
+}
+point_count = 5
+
 [node name="Nivel1" type="Node2D" unique_id=1933223351]
 
 [node name="Fondo" type="Node" parent="." unique_id=2057209537]
@@ -43,8 +49,8 @@ position = Vector2(-4, 83)
 shape = SubResource("RectangleShape2D_v8yid")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1495285342]
-position = Vector2(137.00002, 80)
-scale = Vector2(0.5519999, 0.8)
+position = Vector2(135.5, 80)
+scale = Vector2(0.5459999, 0.8)
 texture = ExtResource("1_8d1es")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=1317266404]
@@ -71,3 +77,11 @@ constant_linear_velocity = Vector2(1152, 324)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/limite superior" unique_id=1181185911]
 position = Vector2(143.5, -4)
 shape = SubResource("RectangleShape2D_0klr0")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=812356629]
+curve = SubResource("Curve2D_20qyh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1582797739]
+position = Vector2(269, 155)
+rotation = -1.5642605
+scale = Vector2(1, -9.346)

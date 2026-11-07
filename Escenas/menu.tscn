@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ba12nuuriif15" path="res://Imagenes/Botones/BotonSalir.png" id="8_f7xxo"]
 [ext_resource type="Texture2D" uid="uid://duinl7ipq5kyg" path="res://Imagenes/Botones/BotonSalirPressed.png" id="9_2g3rp"]
 [ext_resource type="Texture2D" uid="uid://b1bngh65xp6lg" path="res://Imagenes/Botones/BotonSalirHover.png" id="10_iwhjx"]
+[ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="12_a1ang"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h1wq0"]
 load_path = "res://.godot/imported/CimaMenu.png-fa1653398d341d649f370fece6c064da.ctex"
@@ -77,6 +78,7 @@ texture_hover = ExtResource("10_iwhjx")
 [node name="settings" type="Node" parent="." unique_id=1175073550]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=338311577]
+stream = ExtResource("12_a1ang")
 autoplay = true
 
 [connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonJugar" to="." method="_on_boton_jugar_pressed"]
