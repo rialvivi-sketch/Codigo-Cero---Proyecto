@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://46kgkntlfy4e"]
+
+[ext_resource type="Script" uid="uid://b3ffw8qg2xkwc" path="res://Scripts/gui.gd" id="1_6lon5"]
+[ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="2_q8o8l"]
+
+[node name="GUI" type="CanvasLayer" unique_id=840462096]
+script = ExtResource("1_6lon5")
+
+[node name="Scoreboard" type="Control" parent="." unique_id=1247529963]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 272.0
+offset_bottom = 159.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Scoreboard" unique_id=1038256004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_q8o8l")
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Score" type="Label" parent="Scoreboard/MarginContainer" unique_id=963726837]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_q8o8l")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/line_spacing = 6
+theme_override_constants/paragraph_spacing = 6
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 6
+text = "SCORE: 0"
+horizontal_alignment = 1
+
+[node name="Level" type="Label" parent="Scoreboard/MarginContainer" unique_id=1899029465]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_q8o8l")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/line_spacing = 6
+theme_override_constants/paragraph_spacing = 6
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 10
+text = "LEVEL 1 EASY"
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="Scoreboard/MarginContainer" unique_id=873314254]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_q8o8l")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/line_spacing = 6
+theme_override_constants/paragraph_spacing = 6
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 10
+text = "CREDITS: 1"
+
+[node name="InsertCoin" type="Label" parent="Scoreboard/MarginContainer" unique_id=1153890638]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_q8o8l")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/line_spacing = 6
+theme_override_constants/paragraph_spacing = 6
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 10
+text = "INSERT COIN"
+horizontal_alignment = 2

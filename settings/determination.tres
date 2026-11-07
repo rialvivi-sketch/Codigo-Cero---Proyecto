@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bwcgdtkau5qvj"]
+
+[ext_resource type="FontFile" uid="uid://bjwkd6wqbxjug" path="res://settings/DeterminationSansWebRegular-369X.ttf" id="1_ropy0"]
+
+[resource]
+default_font = ExtResource("1_ropy0")
+default_font_size = 16

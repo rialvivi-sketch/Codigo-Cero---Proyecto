@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cwku52h0vx6i1"]
+
+[ext_resource type="Script" uid="uid://c3mwqa4810rn3" path="res://Scripts/enemy.gd" id="1_yj12m"]
+[ext_resource type="Texture2D" uid="uid://5vxqdn6nete7" path="res://Imagenes/enemigos/Enemigo1.png" id="2_40vke"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_40vke")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
+size = Vector2(211, 86)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iifgy"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Explosion",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D" unique_id=1507888740]
+script = ExtResource("1_yj12m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1339951585 groups=["enemy"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1763963315]
+position = Vector2(145, 82.00001)
+scale = Vector2(5.7187448, 4.6383724)
+sprite_frames = SubResource("SpriteFrames_7p23x")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=436652121]
+position = Vector2(146, 71)
+shape = SubResource("RectangleShape2D_v8yid")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Area2D" unique_id=1583202759]
+
+[node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=1207727888]
+sprite_frames = SubResource("SpriteFrames_iifgy")
+animation = &"Explosion"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Explosion" unique_id=840765723]
