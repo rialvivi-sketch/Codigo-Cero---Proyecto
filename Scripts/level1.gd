@@ -4,7 +4,7 @@ extends Node2D
 
 func _ready() -> void:
 	GLOBAL.score = 0
-	GLOBAL.credits = 1
+	GLOBAL.credits = 2
 
 func _process(delta) -> void:
 	parallax_bg(delta)
