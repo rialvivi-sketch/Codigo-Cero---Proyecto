@@ -41,3 +41,11 @@ text = "ESCOGE TU NAVE"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=24993395]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1397946544]
+layout_mode = 2
+size_flags_horizontal = 4
