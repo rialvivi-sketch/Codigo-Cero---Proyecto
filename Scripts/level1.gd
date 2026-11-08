@@ -7,7 +7,7 @@ const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
 
 func _ready() -> void:
 	GLOBAL.score = 0
-	GLOBAL.credits = 2
+	GLOBAL.credits = 1
 
 func _process(delta) -> void:
 	parallax_bg(delta)
