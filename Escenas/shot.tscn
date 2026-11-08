@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dtmu5wqaymhri"]
+[gd_scene format=3 uid="uid://bcqsmvpv70te0"]
 
 [ext_resource type="Script" uid="uid://cae4gcb7sk02l" path="res://Scripts/shot.gd" id="1_o0dqf"]
 [ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="2_hfr5s"]

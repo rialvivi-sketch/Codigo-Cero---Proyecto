@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://b5t1oubnmmh2m"]
 
 [ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/level1.gd" id="1_c6wl6"]
-[ext_resource type="Script" uid="uid://cae4gcb7sk02l" path="res://Scripts/shot.gd" id="1_dhn5r"]
-[ext_resource type="PackedScene" uid="uid://re420bs1lm8t" path="res://Escenas/gui.tscn" id="2_c6wl6"]
+[ext_resource type="PackedScene" uid="uid://46kgkntlfy4e" path="res://Escenas/gui.tscn" id="2_c6wl6"]
 [ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="2_k5unv"]
-[ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_w707c"]
+[ext_resource type="PackedScene" uid="uid://cwku52h0vx6i1" path="res://Escenas/enemy.tscn" id="2_w707c"]
 [ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="5_ibtyg"]
 [ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="5_w707c"]
 
@@ -88,7 +87,6 @@ rotation = 1.5630445
 scale = Vector2(1, -9.346)
 
 [node name="Player" parent="." unique_id=1450505883 instance=ExtResource("5_ibtyg")]
-script = ExtResource("1_dhn5r")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1561358535]
 
