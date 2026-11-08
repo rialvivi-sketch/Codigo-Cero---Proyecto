@@ -28,8 +28,6 @@ func motion_ctrl() -> void:
 	velocity.y = GLOBAL.get_axis().y * -SPEED 
 	move_and_slide()
 	
-	
-	
 func shoot_ctrl() -> void:
 	$Flash.play("flash")
 	$settings/AudioStreamPlayer.play()
