@@ -2,6 +2,9 @@ extends Node2D
 
 @export var enemy : PackedScene
 
+const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
+
+
 func _ready() -> void:
 	GLOBAL.score = 0
 	GLOBAL.credits = 2
@@ -20,3 +23,8 @@ func _on_timer_timeout():
 	var enemy_instance = enemy.instantiate()
 	enemy_instance.global_position = $PathSpawn/PathFollow.global_position
 	add_child(enemy_instance)
+	
+func respawn_player():
+	var new_player = PLAYER_SCENE.instantiate()
+	new_player.global_position = Vector2(100, 300)
+	add_child(new_player)

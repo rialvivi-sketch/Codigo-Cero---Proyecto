@@ -26,7 +26,9 @@ func _on_area_2d_body_entered(body):
 		if GLOBAL.credits <= 0:
 			get_tree().call_deferred("change_scene_to_file", "res://Escenas/game_over.tscn")
 		else:
+			var level = get_tree().get_first_node_in_group("Level")
 			body.queue_free()
+			level.call_deferred("respawn_player")
 
 func _on_area_2d_area_entered(area) -> void:
 	if area.is_in_group("Shot"):
