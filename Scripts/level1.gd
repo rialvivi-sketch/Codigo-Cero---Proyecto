@@ -24,7 +24,3 @@ func _on_timer_timeout():
 	enemy_instance.global_position = $PathSpawn/PathFollow.global_position
 	add_child(enemy_instance)
 	
-func respawn_player():
-	var new_player = PLAYER_SCENE.instantiate()
-	new_player.global_position = Vector2(100, 300)
-	add_child(new_player)

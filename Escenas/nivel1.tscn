@@ -50,8 +50,8 @@ autostart = true
 motion_mirroring = Vector2(272.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1495285342]
-position = Vector2(195.54784, 80)
-scale = Vector2(0.78219134, 0.79)
+position = Vector2(195.54784, 79)
+scale = Vector2(0.78219134, 0.8)
 texture = ExtResource("2_k5unv")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=1280040434]

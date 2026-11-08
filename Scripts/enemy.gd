@@ -41,3 +41,7 @@ func _on_audio_finished() -> void:
 	
 	if GLOBAL.credits <= 0:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://df30o5wjbushe"]
+
+[ext_resource type="Script" uid="uid://epcn20gg32r5" path="res://Scripts/enemy_2.gd" id="1_5yxkg"]
+[ext_resource type="Texture2D" uid="uid://cj22hk4kmhs0c" path="res://Imagenes/enemigos/Enemigo2.png" id="1_lbakq"]
+[ext_resource type="Texture2D" uid="uid://ddfpycx60dcsd" path="res://Imagenes/ExplosionSprites/Explosion1.png" id="2_5yxkg"]
+[ext_resource type="Texture2D" uid="uid://r03lhrehmmbd" path="res://Imagenes/ExplosionSprites/Explosion2.png" id="3_24te0"]
+[ext_resource type="Texture2D" uid="uid://dcgmsrfoa2334" path="res://Imagenes/ExplosionSprites/Explosion3.png" id="4_renj7"]
+[ext_resource type="Texture2D" uid="uid://baae0a8a33i63" path="res://Imagenes/ExplosionSprites/Explosion4.png" id="5_5uo2e"]
+[ext_resource type="Texture2D" uid="uid://ci8mnkfhas1pk" path="res://Imagenes/ExplosionSprites/Explosion5.png" id="6_qny2f"]
+[ext_resource type="AudioStream" uid="uid://4n2t28uvtbay" path="res://Imagenes/ElevenLabs_Explosión_fuerte_de_bomba_arcade,_sonido_muy_gated,_estallido_súbito_y_staccato,_graves_contundentes.mp3" id="7_mp2kv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3r2wm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lbakq")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkq8c"]
+size = Vector2(21.25, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06x5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5yxkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_24te0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_renj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5uo2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qny2f")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 0,
+"name": &"Explosion",
+"speed": 12.0
+}]
+
+[node name="enemy2" type="Node2D" unique_id=368625643]
+script = ExtResource("1_5yxkg")
+
+[node name="enemy2" type="Area2D" parent="." unique_id=346142772 groups=["enemy"]]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy2" unique_id=872828251]
+position = Vector2(1, 1)
+scale = Vector2(0.9218725, 0.91293645)
+sprite_frames = SubResource("SpriteFrames_3r2wm")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2" unique_id=1662095727]
+position = Vector2(1.375, -1)
+shape = SubResource("RectangleShape2D_hkq8c")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="enemy2" unique_id=1510880858]
+position = Vector2(-3, 0)
+
+[node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=657624852]
+sprite_frames = SubResource("SpriteFrames_06x5e")
+animation = &"Explosion"
+frame = 5
+
+[node name="Audio" type="AudioStreamPlayer" parent="Explosion" unique_id=1839879649]
+stream = ExtResource("7_mp2kv")
+
+[connection signal="area_entered" from="enemy2" to="." method="_on_enemy_2_area_entered"]
+[connection signal="body_entered" from="enemy2" to="." method="_on_enemy_2_body_entered"]
+[connection signal="screen_exited" from="enemy2/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="finished" from="Explosion/Audio" to="." method="_on_audio_finished"]
