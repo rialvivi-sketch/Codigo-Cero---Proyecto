@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/level1.gd" id="1_c6wl6"]
 [ext_resource type="PackedScene" uid="uid://46kgkntlfy4e" path="res://Escenas/gui.tscn" id="2_c6wl6"]
 [ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="2_k5unv"]
-[ext_resource type="PackedScene" uid="uid://cwku52h0vx6i1" path="res://Escenas/enemy.tscn" id="2_w707c"]
+[ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_w707c"]
 [ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="5_ibtyg"]
 [ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="5_w707c"]
 
@@ -47,11 +47,11 @@ autostart = true
 [node name="Back" type="ParallaxBackground" parent="Fondo" unique_id=952381386]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Back" unique_id=1535201692]
-motion_mirroring = Vector2(272, 0)
+motion_mirroring = Vector2(272.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1495285342]
-position = Vector2(135.5, 80)
-scale = Vector2(0.5459999, 0.8)
+position = Vector2(195.54784, 80)
+scale = Vector2(0.78219134, 0.79)
 texture = ExtResource("2_k5unv")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=1280040434]
