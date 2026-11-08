@@ -1,42 +1,84 @@
-[gd_scene format=3 uid="uid://u3dw36gsr8hc"]
+[gd_scene format=3 uid="uid://d2ppohjfqap2q"]
 
-[ext_resource type="Script" uid="uid://cae4gcb7sk02l" path="res://Scripts/shot.gd" id="1_37yi2"]
-[ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="2_b2ges"]
+[ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="1_mkivq"]
+[ext_resource type="Script" uid="uid://62ihx8ijw8bj" path="res://Scripts/game_over.gd" id="2_37yi2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_b2ges")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_b2ges")
-}],
-"loop": 1,
-"name": &"shot",
-"speed": 5.0
-}]
+[node name="GameOver" type="Control" unique_id=158390025]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mkivq")
+script = ExtResource("2_37yi2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p23x"]
-size = Vector2(0.951995, 0.58236456)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1343847743]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 159.0
+color = Color(0, 0, 0, 1)
 
-[node name="shot" type="Area2D" unique_id=801458406 groups=["shot"]]
-collision_mask = 2
-script = ExtResource("1_37yi2")
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=744390397]
+layout_mode = 0
+offset_right = 272.0
+offset_bottom = 157.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=763380992]
-position = Vector2(-0.5, -0.9999962)
-scale = Vector2(1.3636363, 1.5999985)
-sprite_frames = SubResource("SpriteFrames_7p23x")
-animation = &"shot"
+[node name="Main" type="VBoxContainer" parent="MarginContainer" unique_id=1657012823]
+layout_mode = 2
+size_flags_vertical = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039069610]
-scale = Vector2(16.806816, 16.125)
-shape = SubResource("RectangleShape2D_7p23x")
+[node name="Title" type="VBoxContainer" parent="MarginContainer/Main" unique_id=1785049989]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1225199345]
-position = Vector2(6, 7)
-rect = Rect2(-14, -13, 16, 10)
+[node name="GameOver" type="Label" parent="MarginContainer/Main/Title" unique_id=1114194305]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.79258275, 0.2299805, 0.35714447, 1)
+theme_override_font_sizes/font_size = 38
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[node name="mensaje" type="Label" parent="MarginContainer/Main/Title" unique_id=1995002976]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+text = "Intentalo de nuevo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="VBoxContainer" parent="." unique_id=302035696]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.5
+offset_top = -86.0
+offset_right = 35.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Resart" type="Button" parent="Botones" unique_id=790002985]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+action_mode = 0
+text = "Reiniciar"
+flat = true
+
+[node name="Exit" type="Button" parent="Botones" unique_id=610756100]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+text = "Salir"
+flat = true
+
+[connection signal="pressed" from="Botones/Resart" to="." method="_on_resart_pressed"]
+[connection signal="pressed" from="Botones/Exit" to="." method="_on_exit_pressed"]

@@ -1,42 +1,115 @@
 [gd_scene format=3 uid="uid://b5t1oubnmmh2m"]
 
-[ext_resource type="Script" uid="uid://cae4gcb7sk02l" path="res://Scripts/shot.gd" id="1_dhn5r"]
-[ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="2_20qyh"]
+[ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/level1.gd" id="1_c6wl6"]
+[ext_resource type="PackedScene" uid="uid://46kgkntlfy4e" path="res://Escenas/gui.tscn" id="2_c6wl6"]
+[ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="2_k5unv"]
+[ext_resource type="PackedScene" uid="uid://cwku52h0vx6i1" path="res://Escenas/enemy.tscn" id="2_w707c"]
+[ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="5_ibtyg"]
+[ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="5_w707c"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_20qyh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_20qyh")
-}],
-"loop": 1,
-"name": &"shot",
-"speed": 5.0
-}]
+[sub_resource type="Curve2D" id="Curve2D_20qyh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 269, -126, 0, 0, 0, 0, 270, 3, 0, 0, 0, 0, 265, 3, 0, 0, 0, 0, 264, -126, 0, 0, 0, 0, 270, -126)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0klr0"]
+size = Vector2(281, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p23x"]
-size = Vector2(0.951995, 0.58236456)
+size = Vector2(558, 20)
 
-[node name="shot" type="Area2D" unique_id=801458406 groups=["shot"]]
-collision_mask = 2
-script = ExtResource("1_dhn5r")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
+size = Vector2(20, 167)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=763380992]
-position = Vector2(-0.5, -0.9999962)
-scale = Vector2(1.3636363, 1.5999985)
-sprite_frames = SubResource("SpriteFrames_7p23x")
-animation = &"shot"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5mbm"]
+size = Vector2(20, 174)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039069610]
-scale = Vector2(16.806816, 16.125)
+[node name="Leve1" type="Node2D" unique_id=1933223351 groups=["Level"]]
+script = ExtResource("1_c6wl6")
+enemy = ExtResource("2_w707c")
+
+[node name="GUI" parent="." unique_id=840462096 instance=ExtResource("2_c6wl6")]
+
+[node name="Settings" type="Node" parent="." unique_id=802312014]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=1018737733]
+stream = ExtResource("5_w707c")
+volume_db = -10.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="Settings" unique_id=451912008]
+wait_time = 0.92
+autostart = true
+
+[node name="Fondo" type="Node" parent="." unique_id=2057209537]
+
+[node name="Back" type="ParallaxBackground" parent="Fondo" unique_id=952381386]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Back" unique_id=1535201692]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1495285342]
+position = Vector2(135.5, 80)
+scale = Vector2(0.5459999, 0.8)
+texture = ExtResource("2_k5unv")
+
+[node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=1280040434]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Edificios" unique_id=167679896]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Edificios/ParallaxLayer" unique_id=1488092006]
+position = Vector2(135.00002, 76)
+scale = Vector2(0.54399997, 0.78000003)
+
+[node name="Ventanales" type="ParallaxBackground" parent="Fondo" unique_id=2130750916]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Ventanales" unique_id=593956180]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Ventanales/ParallaxLayer" unique_id=1739579027]
+
+[node name="Escritorios" type="ParallaxBackground" parent="Fondo" unique_id=1718562936]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Escritorios" unique_id=282780618]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Escritorios/ParallaxLayer" unique_id=645810015]
+
+[node name="PathSpawn" type="Path2D" parent="." unique_id=812356629]
+position = Vector2(2, 140)
+curve = SubResource("Curve2D_20qyh")
+
+[node name="PathFollow" type="PathFollow2D" parent="PathSpawn" unique_id=1582797739]
+position = Vector2(269, -126)
+rotation = 1.5630445
+scale = Vector2(1, -9.346)
+
+[node name="Player" parent="." unique_id=1450505883 instance=ExtResource("5_ibtyg")]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1561358535]
+
+[node name="LimiteInferior" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1784164700]
+position = Vector2(129.5, 159)
+shape = SubResource("RectangleShape2D_0klr0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1900187386]
+
+[node name="LimiteSuperior" type="CollisionShape2D" parent="StaticBody2D" unique_id=335529334]
+position = Vector2(269, 0)
 shape = SubResource("RectangleShape2D_7p23x")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1225199345]
-position = Vector2(6, 7)
-rect = Rect2(-14, -13, 16, 10)
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1261405526]
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[node name="LimiteIzq" type="CollisionShape2D" parent="StaticBody2D3" unique_id=479332863]
+position = Vector2(0, 73.5)
+shape = SubResource("RectangleShape2D_v8yid")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1688584565]
+
+[node name="LimiteDerecho" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1237486469]
+position = Vector2(281, 83)
+shape = SubResource("RectangleShape2D_w5mbm")
+
+[connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]

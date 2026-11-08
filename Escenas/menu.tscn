@@ -1,42 +1,81 @@
 [gd_scene format=3 uid="uid://dx4yeh7tdoo6p"]
 
-[ext_resource type="Script" uid="uid://cae4gcb7sk02l" path="res://Scripts/shot.gd" id="1_p25xy"]
-[ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="2_17m5t"]
+[ext_resource type="Script" uid="uid://dl8mtqgcjfuow" path="res://Scripts/menu.gd" id="1_1j0rj"]
+[ext_resource type="Texture2D" uid="uid://egpjwahuvlba" path="res://Imagenes/Titulo.png" id="2_a1ang"]
+[ext_resource type="Texture2D" uid="uid://80jp3y0ymmgo" path="res://Imagenes/Botones/BotonJugar.png" id="2_ftgnq"]
+[ext_resource type="Texture2D" uid="uid://b13s5cg8iuk6t" path="res://Imagenes/Botones/BotonJugarPressed.png" id="3_a1ang"]
+[ext_resource type="Texture2D" uid="uid://ccigq6uut2447" path="res://Imagenes/Botones/BotonJugarHover.png" id="4_oeqfb"]
+[ext_resource type="Texture2D" uid="uid://c7l285ck1p8yx" path="res://Imagenes/Botones/BotonNaves.png" id="5_nme5s"]
+[ext_resource type="Texture2D" uid="uid://dgc48duyahll2" path="res://Imagenes/Botones/BotonNavesPressed.png" id="6_q5mo8"]
+[ext_resource type="Texture2D" uid="uid://b1cyyrtspwwbl" path="res://Imagenes/Botones/BotonNavesHover.png" id="7_08ws6"]
+[ext_resource type="Texture2D" uid="uid://ba12nuuriif15" path="res://Imagenes/Botones/BotonSalir.png" id="8_f7xxo"]
+[ext_resource type="Texture2D" uid="uid://duinl7ipq5kyg" path="res://Imagenes/Botones/BotonSalirPressed.png" id="9_2g3rp"]
+[ext_resource type="Texture2D" uid="uid://b1bngh65xp6lg" path="res://Imagenes/Botones/BotonSalirHover.png" id="10_iwhjx"]
+[ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="12_a1ang"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_17m5t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_17m5t")
-}],
-"loop": 1,
-"name": &"shot",
-"speed": 5.0
-}]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h1wq0"]
+load_path = "res://.godot/imported/CimaMenu.png-fa1653398d341d649f370fece6c064da.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p23x"]
-size = Vector2(0.951995, 0.58236456)
+[node name="Menu" type="Control" unique_id=867860551]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1j0rj")
+metadata/_edit_horizontal_guides_ = [-40794.0]
 
-[node name="shot" type="Area2D" unique_id=801458406 groups=["shot"]]
-collision_mask = 2
-script = ExtResource("1_p25xy")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1685449783]
+layout_mode = 0
+offset_right = 271.0
+offset_bottom = 158.0
+texture = SubResource("CompressedTexture2D_h1wq0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=763380992]
-position = Vector2(-0.5, -0.9999962)
-scale = Vector2(1.3636363, 1.5999985)
-sprite_frames = SubResource("SpriteFrames_7p23x")
-animation = &"shot"
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect" unique_id=1881535126]
+layout_mode = 0
+offset_right = 271.0
+offset_bottom = 159.0
+alignment = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039069610]
-scale = Vector2(16.806816, 16.125)
-shape = SubResource("RectangleShape2D_7p23x")
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/HBoxContainer" unique_id=1092338433]
+layout_mode = 2
+alignment = 1
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1225199345]
-position = Vector2(6, 7)
-rect = Rect2(-14, -13, 16, 10)
+[node name="VBoxContainer1" type="VBoxContainer" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=786422699]
+layout_mode = 2
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[node name="TextureButton" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2/VBoxContainer1" unique_id=1248898081]
+layout_mode = 2
+texture_normal = ExtResource("2_a1ang")
+
+[node name="BotonJugar" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=294313000]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_ftgnq")
+texture_pressed = ExtResource("3_a1ang")
+texture_hover = ExtResource("4_oeqfb")
+
+[node name="BotonNaves" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=740518364]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_nme5s")
+texture_pressed = ExtResource("6_q5mo8")
+texture_hover = ExtResource("7_08ws6")
+
+[node name="BotonSalir" type="TextureButton" parent="TextureRect/HBoxContainer/VBoxContainer2" unique_id=457480983]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_f7xxo")
+texture_pressed = ExtResource("9_2g3rp")
+texture_hover = ExtResource("10_iwhjx")
+
+[node name="settings" type="Node" parent="." unique_id=1175073550]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=338311577]
+stream = ExtResource("12_a1ang")
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonNaves" to="." method="_on_boton_naves_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/VBoxContainer2/BotonSalir" to="." method="_on_boton_salir_pressed"]
