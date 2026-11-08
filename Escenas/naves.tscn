@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bhlxmxlp375yd"]
+
+[ext_resource type="Texture2D" path="res://Imagenes/fondos/CimaMenu.png" id="1_jnv4t"]
+[ext_resource type="Theme" path="res://settings/determination.tres" id="2_hm3a8"]
+
+[node name="Naves" type="Control" unique_id=149478672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=422782026]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_jnv4t")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1055161127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1660244122]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=575250596]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_hm3a8")
+theme_override_colors/font_color = Color(1, 0.80066663, 0.07999998, 1)
+text = "ESCOGE TU NAVE"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1807430982]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=24993395]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1397946544]
+layout_mode = 2
+size_flags_horizontal = 4

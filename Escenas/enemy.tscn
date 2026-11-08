@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dwl7oluw636np"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_yj12m"]
+[ext_resource type="Texture2D" path="res://Imagenes/enemigos/Enemigo1.png" id="2_40vke"]
+[ext_resource type="AudioStream" path="res://Imagenes/ElevenLabs_Explosión_fuerte_de_bomba_arcade,_sonido_muy_gated,_estallido_súbito_y_staccato,_graves_contundentes.mp3" id="3_40vke"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_40vke")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p23x"]
+size = Vector2(21.25, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iifgy"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Explosion",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D" unique_id=1507888740]
+script = ExtResource("1_yj12m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1339951585 groups=["enemy"]]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1763963315]
+position = Vector2(1, 1)
+scale = Vector2(0.9218725, 0.91293645)
+sprite_frames = SubResource("SpriteFrames_7p23x")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1023491762]
+position = Vector2(1.375, -1)
+shape = SubResource("RectangleShape2D_7p23x")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Area2D" unique_id=1583202759]
+position = Vector2(-3, 0)
+
+[node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=1207727888]
+sprite_frames = SubResource("SpriteFrames_iifgy")
+animation = &"Explosion"
+
+[node name="Audio" type="AudioStreamPlayer" parent="Explosion" unique_id=840765723]
+stream = ExtResource("3_40vke")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="Area2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="finished" from="Explosion/Audio" to="." method="_on_audio_stream_player_finished"]
