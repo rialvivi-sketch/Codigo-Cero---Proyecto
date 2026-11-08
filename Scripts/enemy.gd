@@ -18,11 +18,15 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 	queue_free()
 
 
-func _on_area_2d_body_entered(body) -> void:
+func _on_area_2d_body_entered(body):
 	if body is Player:
 		explosion_ctrl()
-		body.queue_free()
 		GLOBAL.credits -= 1
+		
+		if GLOBAL.credits <= 0:
+			get_tree().call_deferred("change_scene_to_file", "res://Escenas/game_over.tscn")
+		else:
+			body.queue_free()
 
 func _on_area_2d_area_entered(area) -> void:
 	if area.is_in_group("Shot"):
@@ -35,3 +39,11 @@ func _on_audio_finished() -> void:
 	
 	if GLOBAL.credits <= 0:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	pass # Replace with function body.
+
+
+func _on_audio_stream_player_finished() -> void:
+	pass # Replace with function body.
