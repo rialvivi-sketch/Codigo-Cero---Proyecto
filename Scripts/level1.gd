@@ -1,6 +1,9 @@
 extends Node2D
 
 @export var enemy : PackedScene
+const SCORE_TO_LEVEL2 = 1500
+
+var level_completed = false
 
 const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
 
@@ -12,6 +15,10 @@ func _ready() -> void:
 func _process(delta) -> void:
 	parallax_bg(delta)
 	$PathSpawn/PathFollow.set_progress($PathSpawn/PathFollow.get_progress() + 80 * delta)
+
+	if GLOBAL.score >= SCORE_TO_LEVEL2 and not level_completed:
+		level_completed = true
+		get_tree().change_scene_to_file("res://Escenas/felicidades.tscn")
 
 func parallax_bg(delta_time) -> void:
 	get_node("Fondo/Back").scroll_base_offset -= Vector2(1, 0) * 8 * delta_time

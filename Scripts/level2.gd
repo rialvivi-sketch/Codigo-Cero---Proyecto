@@ -3,13 +3,12 @@ extends Node2D
 @export var enemy : PackedScene
 @export var enemy_2 : PackedScene
 
-const SCORE_TO_UNLOCK = 500
+const SCORE_TO_UNLOCK = 2000
 
 const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
 
 
 func _ready() -> void:
-	GLOBAL.score = 0
 	GLOBAL.credits = 1
 
 func _process(delta) -> void:
