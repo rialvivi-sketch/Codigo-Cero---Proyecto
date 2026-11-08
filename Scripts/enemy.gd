@@ -28,6 +28,7 @@ func _on_area_2d_area_entered(area) -> void:
 	if area.is_in_group("Shot"):
 		explosion_ctrl()
 		GLOBAL.score += 100
+		area.queue_free()
 		
 func _on_audio_finished() -> void:
 	queue_free()

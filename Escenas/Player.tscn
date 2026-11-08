@@ -72,7 +72,7 @@ animation = &"flash"
 frame = 1
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1301764242]
-position = Vector2(42.875, 81)
+position = Vector2(46, 80)
 shape = SubResource("RectangleShape2D_w5mbm")
 metadata/_edit_lock_ = true
 

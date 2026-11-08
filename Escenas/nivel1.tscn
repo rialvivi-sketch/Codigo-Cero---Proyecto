@@ -9,9 +9,21 @@
 
 [sub_resource type="Curve2D" id="Curve2D_20qyh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 269, 155, 0, 0, 0, 0, 270, 2, 0, 0, 0, 0, 264, 1, 0, 0, 0, 0, 266, 97, 0, 0, 0, 0, 264, 155, 0, 0, 0, 0, 269, 155)
+"points": PackedVector2Array(0, 0, 0, 0, 269, -126, 0, 0, 0, 0, 270, 3, 0, 0, 0, 0, 265, 3, 0, 0, 0, 0, 264, -126, 0, 0, 0, 0, 270, -126)
 }
-point_count = 6
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0klr0"]
+size = Vector2(281, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p23x"]
+size = Vector2(558, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
+size = Vector2(20, 167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5mbm"]
+size = Vector2(20, 174)
 
 [node name="Leve1" type="Node2D" unique_id=1933223351 groups=["Level"]]
 script = ExtResource("1_c6wl6")
@@ -23,6 +35,7 @@ enemy = ExtResource("2_w707c")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=1018737733]
 stream = ExtResource("5_w707c")
+volume_db = -10.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="Settings" unique_id=451912008]
@@ -65,13 +78,38 @@ motion_mirroring = Vector2(272, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Escritorios/ParallaxLayer" unique_id=645810015]
 
 [node name="PathSpawn" type="Path2D" parent="." unique_id=812356629]
+position = Vector2(2, 140)
 curve = SubResource("Curve2D_20qyh")
 
 [node name="PathFollow" type="PathFollow2D" parent="PathSpawn" unique_id=1582797739]
-position = Vector2(269, 155)
-rotation = -1.5642605
+position = Vector2(269, -126)
+rotation = 1.5630445
 scale = Vector2(1, -9.346)
 
 [node name="Player" parent="." unique_id=1450505883 instance=ExtResource("5_ibtyg")]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1561358535]
+
+[node name="LimiteInferior" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1784164700]
+position = Vector2(129.5, 159)
+shape = SubResource("RectangleShape2D_0klr0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1900187386]
+
+[node name="LimiteSuperior" type="CollisionShape2D" parent="StaticBody2D" unique_id=335529334]
+position = Vector2(269, 0)
+shape = SubResource("RectangleShape2D_7p23x")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1261405526]
+
+[node name="LimiteIzq" type="CollisionShape2D" parent="StaticBody2D3" unique_id=479332863]
+position = Vector2(0, 73.5)
+shape = SubResource("RectangleShape2D_v8yid")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1688584565]
+
+[node name="LimiteDerecho" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1237486469]
+position = Vector2(281, 83)
+shape = SubResource("RectangleShape2D_w5mbm")
 
 [connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]

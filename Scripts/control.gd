@@ -28,8 +28,7 @@ func motion_ctrl() -> void:
 	velocity.y = GLOBAL.get_axis().y * -SPEED 
 	move_and_slide()
 	
-	position.x = clamp(position.x, 0, screensize.x)
-	position.y = clamp(position.y, 0, screensize.y)
+	
 	
 func shoot_ctrl() -> void:
 	$Flash.play("flash")
