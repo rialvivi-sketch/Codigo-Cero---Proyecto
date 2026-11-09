@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dlf7tvheowxqq" path="res://Escenas/enemy_3.tscn" id="4_ia6el"]
 [ext_resource type="PackedScene" uid="uid://bsh58wqujgqlb" path="res://Escenas/enemy_4.tscn" id="5_4mvdn"]
 [ext_resource type="PackedScene" uid="uid://ch5kgr8jaaynq" path="res://Escenas/enemy_5.tscn" id="6_ia6el"]
-[ext_resource type="Texture2D" uid="uid://djr44k3plca3e" path="res://Imagenes/fondos/HelddArt - Etsy.jpg" id="9_ia6el"]
+[ext_resource type="Texture2D" uid="uid://bpx3lcwlkm5eu" path="res://Imagenes/EscenaFondo/NuevoFondo3.png" id="9_ia6el"]
 
 [sub_resource type="Curve2D" id="Curve2D_2ruti"]
 _data = {
@@ -54,8 +54,8 @@ autostart = true
 motion_mirroring = Vector2(278, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=890966253]
-position = Vector2(131.02634, 83)
-scale = Vector2(0.37764585, 0.39903846)
+position = Vector2(139.00002, 80.74999)
+scale = Vector2(1.022059, 1.003125)
 texture = ExtResource("9_ia6el")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=454797625]
