@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="1_mkivq"]
 [ext_resource type="Script" uid="uid://62ihx8ijw8bj" path="res://Scripts/game_over.gd" id="2_37yi2"]
+[ext_resource type="AudioStream" uid="uid://nvugs2df2n3a" path="res://Imagenes/qbertapply-falled-sound-effect-278635.mp3" id="3_b2ges"]
 
 [node name="GameOver" type="Control" unique_id=158390025]
 layout_mode = 3
@@ -79,6 +80,12 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
 text = "Salir"
 flat = true
+
+[node name="settings" type="Node" parent="." unique_id=1776564022]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=1802703974]
+stream = ExtResource("3_b2ges")
+autoplay = true
 
 [connection signal="pressed" from="Botones/Resart" to="." method="_on_resart_pressed"]
 [connection signal="pressed" from="Botones/Exit" to="." method="_on_exit_pressed"]

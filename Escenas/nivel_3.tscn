@@ -5,9 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_gj77e"]
 [ext_resource type="PackedScene" uid="uid://cl5nyqieen753" path="res://Escenas/gui3.tscn" id="2_l2spy"]
 [ext_resource type="PackedScene" uid="uid://df30o5wjbushe" path="res://Escenas/enemy_2.tscn" id="3_4mvdn"]
-[ext_resource type="Texture2D" uid="uid://c2rrcrrcg7p8h" path="res://Imagenes/fondos/MenuPrincipal_0001.png" id="3_clw8a"]
 [ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="3_l2spy"]
 [ext_resource type="PackedScene" uid="uid://dlf7tvheowxqq" path="res://Escenas/enemy_3.tscn" id="4_ia6el"]
+[ext_resource type="PackedScene" uid="uid://bsh58wqujgqlb" path="res://Escenas/enemy_4.tscn" id="5_4mvdn"]
+[ext_resource type="PackedScene" uid="uid://ch5kgr8jaaynq" path="res://Escenas/enemy_5.tscn" id="6_ia6el"]
+[ext_resource type="Texture2D" uid="uid://djr44k3plca3e" path="res://Imagenes/fondos/HelddArt - Etsy.jpg" id="9_ia6el"]
 
 [sub_resource type="Curve2D" id="Curve2D_2ruti"]
 _data = {
@@ -29,6 +31,8 @@ script = ExtResource("1_clw8a")
 enemy = ExtResource("2_gj77e")
 enemy_2 = ExtResource("3_4mvdn")
 enemy_3 = ExtResource("4_ia6el")
+enemy_4 = ExtResource("5_4mvdn")
+enemy_5 = ExtResource("6_ia6el")
 
 [node name="GUI" parent="." unique_id=840462096 instance=ExtResource("2_l2spy")]
 
@@ -39,8 +43,7 @@ stream = ExtResource("1_yfp37")
 volume_db = -10.0
 autoplay = true
 
-[node name="Timer" type="Timer" parent="Settings" unique_id=274935746]
-wait_time = 0.92
+[node name="Timer" type="Timer" parent="Settings" unique_id=1749262654]
 autostart = true
 
 [node name="Fondo" type="Node" parent="." unique_id=192401902]
@@ -48,12 +51,12 @@ autostart = true
 [node name="Back" type="ParallaxBackground" parent="Fondo" unique_id=1668539515]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Back" unique_id=1711479110]
-motion_mirroring = Vector2(272.2, 0)
+motion_mirroring = Vector2(278, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=890966253]
-position = Vector2(179.5, 78)
-scale = Vector2(1.3125001, 1.0874999)
-texture = ExtResource("3_clw8a")
+position = Vector2(131.02634, 83)
+scale = Vector2(0.37764585, 0.39903846)
+texture = ExtResource("9_ia6el")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=454797625]
 

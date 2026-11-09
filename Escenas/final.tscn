@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://10hcn3w2fao7"]
+
+[ext_resource type="Script" uid="uid://ceg3674j0bio6" path="res://Escenas/final.gd" id="1_5at5q"]
+[ext_resource type="AudioStream" uid="uid://mssrqjhmjaij" path="res://Imagenes/freesound_community-dramatic-synth-echo-43970.mp3" id="2_2meub"]
+[ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="2_teg0c"]
+
+[node name="final" type="Node2D" unique_id=281941510]
+script = ExtResource("1_5at5q")
+
+[node name="settings" type="Node" parent="." unique_id=1666103051]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=804777259]
+stream = ExtResource("2_2meub")
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1154349994]
+offset_right = 273.0
+offset_bottom = 159.0
+color = Color(0.627451, 0.4392157, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1879973227]
+offset_left = 26.0
+offset_top = 21.0
+offset_right = 244.0
+offset_bottom = 101.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer" unique_id=1901238941]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer/Main" unique_id=1706329602]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="GameOver" type="Label" parent="MarginContainer/Main/Title" unique_id=2036621098]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_teg0c")
+theme_override_colors/font_color = Color(0.79258275, 0.2299805, 0.35714447, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "FELICIDADES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mensaje" type="Label" parent="MarginContainer/Main/Title" unique_id=1987271707]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_teg0c")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/outline_size = 4
+text = "MISION COMPLETADA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="VBoxContainer" parent="." unique_id=1098740584]
+offset_left = 100.0
+offset_top = 89.0
+offset_right = 171.0
+offset_bottom = 143.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Resart" type="Button" parent="Botones" unique_id=1078254356]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_teg0c")
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+action_mode = 0
+text = "Menú"
+flat = true
+
+[node name="Exit" type="Button" parent="Botones" unique_id=792567422]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_teg0c")
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+text = "Salir"
+flat = true
+
+[connection signal="pressed" from="Botones/Resart" to="." method="_on_resart_pressed"]
+[connection signal="pressed" from="Botones/Exit" to="." method="_on_exit_pressed"]

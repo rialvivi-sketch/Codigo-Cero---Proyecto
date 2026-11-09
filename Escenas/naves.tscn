@@ -25,43 +25,50 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_x1xqw")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1055161127]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1530978540]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 32.0
+offset_right = 202.0
+offset_bottom = 123.0
+color = Color(0.03137255, 0.03137255, 0.03137255, 0.54509807)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1660244122]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=575250596]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme = ExtResource("2_hahhs")
-theme_override_colors/font_color = Color(1, 0.80066663, 0.07999998, 1)
-text = "ESCOGE TU NAVE"
-
-[node name="nave1" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=725130074]
-layout_mode = 2
+[node name="nave1" type="TextureButton" parent="." unique_id=725130074]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 73.0
+offset_right = 126.0
+offset_bottom = 88.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource("3_a5off")
 texture_pressed = ExtResource("5_cyh0c")
 texture_hover = ExtResource("6_a34ta")
-ignore_texture_size = true
 
-[node name="nave2" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1689432017]
-layout_mode = 2
+[node name="nave2" type="TextureButton" parent="." unique_id=1689432017]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 73.0
+offset_right = 179.0
+offset_bottom = 88.0
 size_flags_horizontal = 8
 size_flags_vertical = 6
 texture_normal = ExtResource("4_3rufs")
 texture_pressed = ExtResource("8_2bcys")
 texture_hover = ExtResource("9_ievlv")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/nave1" to="." method="_on_nave_1_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/nave2" to="." method="_on_nave_2_pressed"]
+[node name="Label" type="Label" parent="." unique_id=575250596]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 37.0
+offset_right = 188.0
+offset_bottom = 54.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_hahhs")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/outline_size = 4
+text = "ESCOGE TU NAVE"
+
+[connection signal="pressed" from="nave1" to="." method="_on_nave_1_pressed"]
+[connection signal="pressed" from="nave2" to="." method="_on_nave_2_pressed"]

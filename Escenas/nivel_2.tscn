@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_mbn1r"]
 [ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="2_w7dep"]
 [ext_resource type="PackedScene" uid="uid://df30o5wjbushe" path="res://Escenas/enemy_2.tscn" id="3_5us05"]
+[ext_resource type="PackedScene" uid="uid://dlf7tvheowxqq" path="res://Escenas/enemy_3.tscn" id="4_5us05"]
 [ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="4_g1bbh"]
 [ext_resource type="PackedScene" uid="uid://cxxhcehnxcfmi" path="res://Escenas/gui2.tscn" id="4_mbn1r"]
 [ext_resource type="Texture2D" uid="uid://bjb00vv1711od" path="res://Imagenes/EscenaFondo/NuevoFondo2.png" id="6_mbn1r"]
@@ -27,6 +28,7 @@ size = Vector2(20, 167)
 script = ExtResource("1_g1bbh")
 enemy = ExtResource("2_mbn1r")
 enemy_2 = ExtResource("3_5us05")
+enemy_3 = ExtResource("4_5us05")
 
 [node name="GUI" parent="." unique_id=840462096 instance=ExtResource("4_mbn1r")]
 
@@ -37,8 +39,7 @@ stream = ExtResource("2_w7dep")
 volume_db = -10.0
 autoplay = true
 
-[node name="Timer" type="Timer" parent="Settings" unique_id=281946422]
-wait_time = 0.92
+[node name="Timer" type="Timer" parent="Settings" unique_id=342103581]
 autostart = true
 
 [node name="Fondo" type="Node" parent="." unique_id=61344828]
@@ -49,8 +50,8 @@ autostart = true
 motion_mirroring = Vector2(272.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1237704754]
-position = Vector2(131.83704, 79.00001)
-scale = Vector2(1.0011983, 0.9875)
+position = Vector2(130.99998, 81.50001)
+scale = Vector2(1.007353, 1.01875)
 texture = ExtResource("6_mbn1r")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=76925362]

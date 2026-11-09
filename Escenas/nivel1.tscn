@@ -38,8 +38,7 @@ stream = ExtResource("5_w707c")
 volume_db = -10.0
 autoplay = true
 
-[node name="Timer" type="Timer" parent="Settings" unique_id=451912008]
-wait_time = 0.92
+[node name="Timer" type="Timer" parent="Settings" unique_id=796070487]
 autostart = true
 
 [node name="Fondo" type="Node" parent="." unique_id=2057209537]
