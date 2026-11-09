@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://d2ppohjfqap2q" path="res://Escenas/game_over.tscn" id="1_7w78x"]
 [ext_resource type="Texture2D" uid="uid://c2rrcrrcg7p8h" path="res://Imagenes/fondos/MenuPrincipal_0001.png" id="2_coocc"]
+[ext_resource type="Script" uid="uid://dbr12mnfswe30" path="res://Scripts/felicidades.gd" id="2_e5lsk"]
 
 [node name="Felicidades" unique_id=158390025 instance=ExtResource("1_7w78x")]
+script = ExtResource("2_e5lsk")
 
 [node name="TextureRect" type="TextureRect" parent="." index="0" unique_id=141189119]
 layout_mode = 0

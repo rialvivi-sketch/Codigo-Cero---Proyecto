@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://5gkgl4l064ky"]
+
+[ext_resource type="Script" uid="uid://bx5ksacm3hyvv" path="res://felicidades_3.gd" id="1_5mja1"]
+[ext_resource type="Texture2D" uid="uid://c2rrcrrcg7p8h" path="res://Imagenes/fondos/MenuPrincipal_0001.png" id="2_esexo"]
+[ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="3_esexo"]
+
+[node name="felicidades_3" type="Control" unique_id=748208333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5mja1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1112288466]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_esexo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1946620666]
+layout_mode = 0
+offset_right = 272.0
+offset_bottom = 157.0
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer" unique_id=756111746]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer/Main" unique_id=705340027]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="GameOver" type="Label" parent="MarginContainer/Main/Title" unique_id=736200761]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_esexo")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "Felicidades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mensaje" type="Label" parent="MarginContainer/Main/Title" unique_id=653678008]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_esexo")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+theme_override_constants/outline_size = 4
+text = "Pasaste de nivel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="VBoxContainer" parent="." unique_id=883609800]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -83.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Resart" type="Button" parent="Botones" unique_id=1046325926]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_esexo")
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+theme_override_constants/align_to_largest_stylebox = 4
+action_mode = 0
+text = "Continuar"
+
+[node name="Exit" type="Button" parent="Botones" unique_id=935598341]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_esexo")
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+text = "Salir"
+
+[connection signal="pressed" from="Botones/Resart" to="." method="_on_resart_pressed"]
+[connection signal="pressed" from="Botones/Exit" to="." method="_on_exit_pressed"]

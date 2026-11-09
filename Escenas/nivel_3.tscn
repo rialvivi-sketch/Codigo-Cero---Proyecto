@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://d26eaet7dhju4"]
+
+[ext_resource type="Script" uid="uid://cokitwbwclbrh" path="res://Scripts/nivel_3.gd" id="1_clw8a"]
+[ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="1_yfp37"]
+[ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_gj77e"]
+[ext_resource type="PackedScene" uid="uid://cl5nyqieen753" path="res://Escenas/gui3.tscn" id="2_l2spy"]
+[ext_resource type="PackedScene" uid="uid://df30o5wjbushe" path="res://Escenas/enemy_2.tscn" id="3_4mvdn"]
+[ext_resource type="Texture2D" uid="uid://c2rrcrrcg7p8h" path="res://Imagenes/fondos/MenuPrincipal_0001.png" id="3_clw8a"]
+[ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="3_l2spy"]
+[ext_resource type="PackedScene" uid="uid://dlf7tvheowxqq" path="res://Escenas/enemy_3.tscn" id="4_ia6el"]
+
+[sub_resource type="Curve2D" id="Curve2D_2ruti"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 269, -126, 0, 0, 0, 0, 270, 3, 0, 0, 0, 0, 265, 3, 0, 0, 0, 0, 264, -126, 0, 0, 0, 0, 270, -126)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjqy5"]
+size = Vector2(281, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj77e"]
+size = Vector2(558, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mvdn"]
+size = Vector2(20, 167)
+
+[node name="nivel3" type="Node2D" unique_id=1381897808 groups=["Level"]]
+script = ExtResource("1_clw8a")
+enemy = ExtResource("2_gj77e")
+enemy_2 = ExtResource("3_4mvdn")
+enemy_3 = ExtResource("4_ia6el")
+
+[node name="GUI" parent="." unique_id=840462096 instance=ExtResource("2_l2spy")]
+
+[node name="Settings" type="Node" parent="." unique_id=2073805788]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=489981630]
+stream = ExtResource("1_yfp37")
+volume_db = -10.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="Settings" unique_id=274935746]
+wait_time = 0.92
+autostart = true
+
+[node name="Fondo" type="Node" parent="." unique_id=192401902]
+
+[node name="Back" type="ParallaxBackground" parent="Fondo" unique_id=1668539515]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Back" unique_id=1711479110]
+motion_mirroring = Vector2(272.2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=890966253]
+position = Vector2(179.5, 78)
+scale = Vector2(1.3125001, 1.0874999)
+texture = ExtResource("3_clw8a")
+
+[node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=454797625]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Edificios" unique_id=1525397104]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Edificios/ParallaxLayer" unique_id=69594909]
+position = Vector2(135.00002, 76)
+scale = Vector2(0.54399997, 0.78000003)
+
+[node name="Ventanales" type="ParallaxBackground" parent="Fondo" unique_id=900254266]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Ventanales" unique_id=1123631099]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Ventanales/ParallaxLayer" unique_id=1095345687]
+
+[node name="Escritorios" type="ParallaxBackground" parent="Fondo" unique_id=1151855859]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo/Escritorios" unique_id=1327618722]
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Escritorios/ParallaxLayer" unique_id=1762162534]
+
+[node name="PathSpawn" type="Path2D" parent="." unique_id=166667736]
+position = Vector2(2, 140)
+curve = SubResource("Curve2D_2ruti")
+
+[node name="PathFollow" type="PathFollow2D" parent="PathSpawn" unique_id=87255311]
+position = Vector2(269, -126)
+rotation = 1.5630445
+scale = Vector2(1, -9.346)
+
+[node name="Player" parent="." unique_id=1450505883 instance=ExtResource("3_l2spy")]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=467247395]
+
+[node name="LimiteInferior" type="CollisionShape2D" parent="StaticBody2D4" unique_id=2123405548]
+position = Vector2(129.5, 159)
+shape = SubResource("RectangleShape2D_jjqy5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=166731804]
+
+[node name="LimiteSuperior" type="CollisionShape2D" parent="StaticBody2D" unique_id=832103826]
+position = Vector2(269, 0)
+shape = SubResource("RectangleShape2D_gj77e")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1971443114]
+
+[node name="LimiteIzq" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2084390899]
+position = Vector2(0, 73.5)
+shape = SubResource("RectangleShape2D_4mvdn")
+
+[connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]
