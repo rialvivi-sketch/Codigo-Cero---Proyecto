@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://e85hsdb8rsmy"]
 
-[ext_resource type="PackedScene" uid="uid://d2ppohjfqap2q" path="res://Escenas/game_over.tscn" id="1_o4u87"]
-[ext_resource type="Texture2D" uid="uid://c2rrcrrcg7p8h" path="res://Imagenes/fondos/MenuPrincipal_0001.png" id="2_mm30w"]
+[ext_resource type="PackedScene" uid="uid://d2ppohjfqap2q" path="res://Escenas/game_over.tscn" id="1_7w78x"]
+[ext_resource type="Texture2D" uid="uid://c2rrcrrcg7p8h" path="res://Imagenes/fondos/MenuPrincipal_0001.png" id="2_coocc"]
 
-[node name="Felicidades" unique_id=158390025 instance=ExtResource("1_o4u87")]
+[node name="Felicidades" unique_id=158390025 instance=ExtResource("1_7w78x")]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0" unique_id=141189119]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_mm30w")
+texture = ExtResource("2_coocc")
 
 [node name="ColorRect" parent="." index="1" unique_id=1343847743]
 visible = false
