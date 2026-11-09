@@ -47,7 +47,7 @@ func _on_enemy_6_body_entered(body: Node2D) -> void:
 		GLOBAL.credits -= 1
 
 		if GLOBAL.credits <= 0:
-			get_tree().call_deferred("change_scene_to_file", "res://Escenas/game_over2.tscn")
+			get_tree().call_deferred("change_scene_to_file", "res://Escenas/game_over.tscn")
 		else:
 			var level = get_tree().get_first_node_in_group("Level")
 			body.queue_free()

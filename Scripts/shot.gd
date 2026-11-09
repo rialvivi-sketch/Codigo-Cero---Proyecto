@@ -9,10 +9,10 @@ func _process(delta):
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
-func _on_area_entered(area):
-	if area.is_in_group("enemy"):
-		var enemy = area.get_parent()
+func _on_area_entered(area: Area2D) -> void:
+	var enemy = area.get_parent()
 
+	if area.is_in_group("enemy") or area.is_in_group("Boss"):
 		if enemy.has_method("take_damage"):
 			enemy.take_damage()
 

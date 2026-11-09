@@ -18,7 +18,7 @@ const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
 
 
 func _ready() -> void:
-	GLOBAL.score=10000
+	GLOBAL.score=9000
 	GLOBAL.credits = 1
 	GLOBAL.nivel_actual = "res://Escenas/nivel_4.tscn"
 

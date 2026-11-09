@@ -31,6 +31,8 @@ func motion_ctrl() -> void:
 func shoot_ctrl() -> void:
 	$Flash.play("flash")
 	$settings/AudioStreamPlayer.play()
+
 	var shot_instance = shot.instantiate()
 	shot_instance.global_position = $settings/ShootSpawn.global_position
-	get_tree().call_group("Level", "add_child", shot_instance)
+
+	get_tree().current_scene.add_child(shot_instance)
