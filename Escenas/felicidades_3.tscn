@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5gkgl4l064ky"]
 
-[ext_resource type="Script" uid="uid://bx5ksacm3hyvv" path="res://felicidades_3.gd" id="1_5mja1"]
+[ext_resource type="Script" uid="uid://bx5ksacm3hyvv" path="res://Scripts/felicidades_3.gd" id="1_5mja1"]
 [ext_resource type="Texture2D" uid="uid://c2rrcrrcg7p8h" path="res://Imagenes/fondos/MenuPrincipal_0001.png" id="2_esexo"]
 [ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="3_esexo"]
 

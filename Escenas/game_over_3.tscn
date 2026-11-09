@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://myo0oya6omkq"]
+
+[ext_resource type="Script" uid="uid://bfa10xjfgatu7" path="res://game_over_3.gd" id="1_4sb4i"]
+[ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="2_n6xys"]
+
+[node name="game_over3" type="Control" unique_id=266330290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4sb4i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1643194741]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 159.0
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1139585922]
+layout_mode = 0
+offset_right = 272.0
+offset_bottom = 157.0
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer" unique_id=672818575]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer/Main" unique_id=1875699591]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="GameOver" type="Label" parent="MarginContainer/Main/Title" unique_id=129379378]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_n6xys")
+theme_override_colors/font_color = Color(0.79258275, 0.2299805, 0.35714447, 1)
+theme_override_font_sizes/font_size = 38
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mensaje" type="Label" parent="MarginContainer/Main/Title" unique_id=1461389494]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_n6xys")
+theme_override_colors/font_color = Color(0.6431373, 0.3254902, 0.64705884, 1)
+text = "Intentalo de nuevo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="VBoxContainer" parent="." unique_id=947369582]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.5
+offset_top = -86.0
+offset_right = 35.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Resart" type="Button" parent="Botones" unique_id=1706278576]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_n6xys")
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+action_mode = 0
+text = "Reiniciar"
+flat = true
+
+[node name="Exit" type="Button" parent="Botones" unique_id=1357871731]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_n6xys")
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
+text = "Salir"
+flat = true
+
+[connection signal="pressed" from="Botones/Resart" to="." method="_on_resart_pressed"]
+[connection signal="pressed" from="Botones/Exit" to="." method="_on_exit_pressed"]

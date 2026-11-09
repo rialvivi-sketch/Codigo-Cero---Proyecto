@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bp7mm8tlk4tu0"]
 
 [ext_resource type="Script" uid="uid://dq3exaon34km5" path="res://Scripts/control.gd" id="1_kwdw2"]
-[ext_resource type="Texture2D" uid="uid://dcpet1mvb82qk" path="res://Imagenes/naves/CimaNaveDown.png" id="2_j2dk4"]
+[ext_resource type="Texture2D" uid="uid://bkee6oslhf3tr" path="res://Imagenes/naves/CimaNaveDown.png" id="2_j2dk4"]
 [ext_resource type="PackedScene" uid="uid://bcqsmvpv70te0" path="res://Escenas/shot.tscn" id="2_urfe6"]
-[ext_resource type="Texture2D" uid="uid://cpabg2i8x867e" path="res://Imagenes/naves/CimaNave.png" id="3_urfe6"]
-[ext_resource type="Texture2D" uid="uid://ibreyosmlic5" path="res://Imagenes/naves/CimaNaveUp.png" id="4_mok4h"]
+[ext_resource type="Texture2D" uid="uid://bfkgy15qk4hxf" path="res://Imagenes/naves/CimaNave.png" id="3_urfe6"]
+[ext_resource type="Texture2D" uid="uid://vplhf0isksnq" path="res://Imagenes/naves/CimaNaveUp.png" id="4_mok4h"]
 [ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="5_t27sq"]
 [ext_resource type="AudioStream" uid="uid://hjx7v1jyi4t5" path="res://Imagenes/floraphonic-arcade-ui-28-229497.mp3" id="6_3tm5s"]
 

@@ -1,7 +1,14 @@
-[gd_scene format=3 uid="uid://coho45dyhhifw"]
+[gd_scene format=3 uid="uid://bhlxmxlp375yd"]
 
+[ext_resource type="Script" uid="uid://c1x23mgx440tw" path="res://Scripts/naves.gd" id="1_3rufs"]
 [ext_resource type="Texture2D" uid="uid://y33ufdkss87o" path="res://Imagenes/fondos/CimaMenu.png" id="1_x1xqw"]
 [ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="2_hahhs"]
+[ext_resource type="Texture2D" uid="uid://bfkgy15qk4hxf" path="res://Imagenes/naves/CimaNave.png" id="3_a5off"]
+[ext_resource type="Texture2D" uid="uid://fhrwpogog3fa" path="res://Imagenes/naves/CimaNaveRosita.png" id="4_3rufs"]
+[ext_resource type="Texture2D" uid="uid://bkee6oslhf3tr" path="res://Imagenes/naves/CimaNaveDown.png" id="5_cyh0c"]
+[ext_resource type="Texture2D" uid="uid://vplhf0isksnq" path="res://Imagenes/naves/CimaNaveUp.png" id="6_a34ta"]
+[ext_resource type="Texture2D" uid="uid://b3vsuyy4a0rm3" path="res://Imagenes/naves/CimaNaveDownRosita.png" id="8_2bcys"]
+[ext_resource type="Texture2D" uid="uid://db08dd8qvvlxu" path="res://Imagenes/naves/CimaNaveRositaUp.png" id="9_ievlv"]
 
 [node name="Naves" type="Control" unique_id=149478672]
 layout_mode = 3
@@ -10,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3rufs")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=422782026]
 layout_mode = 0
@@ -27,6 +35,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1660244122]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=575250596]
@@ -37,15 +46,22 @@ theme = ExtResource("2_hahhs")
 theme_override_colors/font_color = Color(1, 0.80066663, 0.07999998, 1)
 text = "ESCOGE TU NAVE"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1807430982]
+[node name="nave1" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=725130074]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 0
+texture_normal = ExtResource("3_a5off")
+texture_pressed = ExtResource("5_cyh0c")
+texture_hover = ExtResource("6_a34ta")
+ignore_texture_size = true
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=24993395]
+[node name="nave2" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1689432017]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
+size_flags_vertical = 6
+texture_normal = ExtResource("4_3rufs")
+texture_pressed = ExtResource("8_2bcys")
+texture_hover = ExtResource("9_ievlv")
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1397946544]
-layout_mode = 2
-size_flags_horizontal = 4
+[connection signal="pressed" from="MarginContainer/VBoxContainer/nave1" to="." method="_on_nave_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/nave2" to="." method="_on_nave_2_pressed"]

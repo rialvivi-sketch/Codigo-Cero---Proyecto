@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://46kgkntlfy4e" path="res://Escenas/gui.tscn" id="2_c6wl6"]
 [ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="2_k5unv"]
 [ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_w707c"]
-[ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="5_ibtyg"]
 [ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="5_w707c"]
+[ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="6_c6wl6"]
 
 [sub_resource type="Curve2D" id="Curve2D_20qyh"]
 _data = {
@@ -86,8 +86,6 @@ position = Vector2(269, -126)
 rotation = 1.5630445
 scale = Vector2(1, -9.346)
 
-[node name="Player" parent="." unique_id=1450505883 instance=ExtResource("5_ibtyg")]
-
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1561358535]
 
 [node name="LimiteInferior" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1784164700]
@@ -111,5 +109,7 @@ shape = SubResource("RectangleShape2D_v8yid")
 [node name="LimiteDerecho" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1237486469]
 position = Vector2(281, 83)
 shape = SubResource("RectangleShape2D_w5mbm")
+
+[node name="Player" parent="." unique_id=1450505883 instance=ExtResource("6_c6wl6")]
 
 [connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]

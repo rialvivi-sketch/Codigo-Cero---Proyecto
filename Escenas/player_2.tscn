@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bcmd6ank8y6f5"]
+
+[ext_resource type="Script" uid="uid://dggpk8bekkajd" path="res://Scripts/player_2.gd" id="1_d7e37"]
+[ext_resource type="Texture2D" uid="uid://b3vsuyy4a0rm3" path="res://Imagenes/naves/CimaNaveDownRosita.png" id="1_y5744"]
+[ext_resource type="Texture2D" uid="uid://fhrwpogog3fa" path="res://Imagenes/naves/CimaNaveRosita.png" id="2_d7e37"]
+[ext_resource type="PackedScene" uid="uid://bcqsmvpv70te0" path="res://Escenas/shot.tscn" id="2_v8t5m"]
+[ext_resource type="Texture2D" uid="uid://db08dd8qvvlxu" path="res://Imagenes/naves/CimaNaveRositaUp.png" id="3_v8t5m"]
+[ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="4_41ky1"]
+[ext_resource type="AudioStream" uid="uid://hjx7v1jyi4t5" path="res://Imagenes/floraphonic-arcade-ui-28-229497.mp3" id="5_62kta"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pf0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y5744")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d7e37")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v8t5m")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhaj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_41ky1")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 0,
+"name": &"flash",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q4cp"]
+size = Vector2(40.25, 18)
+
+[node name="Player2" type="CharacterBody2D" unique_id=2062990727]
+script = ExtResource("1_d7e37")
+shot = ExtResource("2_v8t5m")
+
+[node name="Spaceship" type="AnimatedSprite2D" parent="." unique_id=879920616]
+position = Vector2(42.999996, 76.75)
+scale = Vector2(1.125, 0.9843751)
+sprite_frames = SubResource("SpriteFrames_3pf0h")
+animation = &"up"
+metadata/_edit_lock_ = true
+
+[node name="Flash" type="AnimatedSprite2D" parent="." unique_id=1245856625]
+position = Vector2(61, 78)
+scale = Vector2(0.6136365, 0.7500002)
+sprite_frames = SubResource("SpriteFrames_qhaj3")
+animation = &"flash"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2117431590]
+position = Vector2(45, 75)
+shape = SubResource("RectangleShape2D_1q4cp")
+metadata/_edit_lock_ = true
+
+[node name="settings" type="Node2D" parent="." unique_id=1051333482]
+
+[node name="ShootSpawn" type="Marker2D" parent="settings" unique_id=2059943851]
+position = Vector2(62, 78)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=1371611851]
+stream = ExtResource("5_62kta")
+volume_db = -12.4
