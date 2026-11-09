@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://10hcn3w2fao7"]
 
 [ext_resource type="Script" uid="uid://ceg3674j0bio6" path="res://Escenas/final.gd" id="1_5at5q"]
-[ext_resource type="AudioStream" uid="uid://mssrqjhmjaij" path="res://Imagenes/freesound_community-dramatic-synth-echo-43970.mp3" id="2_2meub"]
+[ext_resource type="AudioStream" uid="uid://bd8drmx1t3omf" path="res://Imagenes/make_more_sound-8-bit-video-game-win-level-sound-version-1-145827.mp3" id="2_5at5q"]
 [ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="2_teg0c"]
 
 [node name="final" type="Node2D" unique_id=281941510]
@@ -10,7 +10,7 @@ script = ExtResource("1_5at5q")
 [node name="settings" type="Node" parent="." unique_id=1666103051]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="settings" unique_id=804777259]
-stream = ExtResource("2_2meub")
+stream = ExtResource("2_5at5q")
 autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1154349994]

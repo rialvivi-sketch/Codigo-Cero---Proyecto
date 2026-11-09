@@ -23,7 +23,7 @@ func _process(delta) -> void:
 
 	if GLOBAL.score >= SCORE_TO_LEVEL2 and not level_completed:
 		level_completed = true
-		get_tree().change_scene_to_file("res://Escenas/nivel_2.tscn")
+		Transicion.mostrar_nivel(2, "res://Escenas/nivel_2.tscn")
 
 
 func parallax_bg(delta_time) -> void:

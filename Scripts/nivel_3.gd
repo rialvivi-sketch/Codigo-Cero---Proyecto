@@ -25,8 +25,8 @@ func _process(delta) -> void:
 
 	if GLOBAL.score >= SCORE_TO_LEVEL3 and not level_completed:
 		level_completed = true
-		
-		get_tree().change_scene_to_file("res://Escenas/nivel_4.tscn")
+		Transicion.mostrar_nivel(4, "res://Escenas/nivel_4.tscn")
+
 func parallax_bg(delta_time) -> void:
 	get_node("Fondo/Back").scroll_base_offset -= Vector2(1, 0) * 8 * delta_time
 	$Fondo/Edificios.scroll_base_offset -= Vector2(1, 0) * 16 * delta_time
