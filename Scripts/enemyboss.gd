@@ -1,27 +1,19 @@
+
 extends Node2D
 
-const SPEED = 100
-const HEALTH = 3
-const AMPLITUDE = 100.0
-const FREQUENCY = 2.0
+const SPEED = 50
+const HEALTH = 2
+
 var current_health = HEALTH
 var explosion = false
 
-
-var tiempo = 0.0
-var posicion_inicial_y = 0.0
-
 func _ready() -> void:
-	posicion_inicial_y = global_position.y
 	$Explosion.stop()
 	$Explosion.visible = false
 
 func _process(delta) -> void:
 	if not explosion:
-		tiempo += delta
-
 		global_position.x -= SPEED * delta
-		global_position.y += cos(tiempo * FREQUENCY) * AMPLITUDE * delta
 
 func take_damage() -> void:
 	if explosion:
@@ -31,32 +23,19 @@ func take_damage() -> void:
 
 	if current_health <= 0:
 		explosion_ctrl()
-		GLOBAL.score += 300
+		GLOBAL.score += 200
 
 func explosion_ctrl() -> void:
 	if explosion:
 		return
 
 	explosion = true
-	$enemyboss.queue_free()
+	$enemy2.queue_free()
 	$Explosion.visible = true
 	$Explosion.play("Explosion")
 	$Explosion/Audio.play()
 
-				
-func _on_audio_finished() -> void:
-	queue_free()
-
-func _on_enemyboss_area_entered(area: Area2D) -> void:
-	if explosion:
-		return
-
-	if area.is_in_group("Shot"):
-		take_damage()
-		area.queue_free()
-
-
-func _on_enemyboss_body_entered(body: Node2D) -> void:
+func _on_enemy_2_body_entered(body: Node2D) -> void:
 	if body is Player:
 		explosion_ctrl()
 		GLOBAL.credits -= 1
@@ -70,6 +49,13 @@ func _on_enemyboss_body_entered(body: Node2D) -> void:
 			if level != null:
 				level.call_deferred("respawn_player")
 
+func _on_enemy_2_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Shot"):
+		take_damage()
+		area.queue_free()
 
-func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+func _on_audio_finished() -> void:
+	queue_free()
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()

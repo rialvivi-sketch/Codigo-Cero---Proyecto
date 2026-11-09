@@ -53,7 +53,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="Settings" unique_id=941211273]
-autostart = true
+one_shot = true
 
 [node name="Fondo" type="Node" parent="." unique_id=990536440]
 
