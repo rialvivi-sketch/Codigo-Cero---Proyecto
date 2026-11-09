@@ -71,6 +71,7 @@ position = Vector2(-3, 0)
 [node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=478408317]
 sprite_frames = SubResource("SpriteFrames_h5fnf")
 animation = &"Explosion"
+frame = 5
 
 [node name="Audio" type="AudioStreamPlayer" parent="Explosion" unique_id=1543697162]
 stream = ExtResource("8_dpget")

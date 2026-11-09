@@ -15,15 +15,6 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbn1r"]
-size = Vector2(281, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5us05"]
-size = Vector2(558, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_udchn"]
-size = Vector2(20, 167)
-
 [node name="Leve2" type="Node2D" unique_id=1061732098 groups=["Level"]]
 script = ExtResource("1_g1bbh")
 enemy = ExtResource("2_mbn1r")
@@ -50,8 +41,8 @@ autostart = true
 motion_mirroring = Vector2(272.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1237704754]
-position = Vector2(130.99998, 81.50001)
-scale = Vector2(1.007353, 1.01875)
+position = Vector2(127.5, 84.5)
+scale = Vector2(1.0404413, 1.0562499)
 texture = ExtResource("6_mbn1r")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=76925362]
@@ -87,23 +78,5 @@ rotation = 1.5630445
 scale = Vector2(1, -9.346)
 
 [node name="Player" parent="." unique_id=1450505883 instance=ExtResource("4_g1bbh")]
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1165449734]
-
-[node name="LimiteInferior" type="CollisionShape2D" parent="StaticBody2D4" unique_id=590340998]
-position = Vector2(129.5, 159)
-shape = SubResource("RectangleShape2D_mbn1r")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1441659282]
-
-[node name="LimiteSuperior" type="CollisionShape2D" parent="StaticBody2D" unique_id=1230945135]
-position = Vector2(269, 0)
-shape = SubResource("RectangleShape2D_5us05")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=434419598]
-
-[node name="LimiteIzq" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2090033444]
-position = Vector2(0, 73.5)
-shape = SubResource("RectangleShape2D_udchn")
 
 [connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]
