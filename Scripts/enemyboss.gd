@@ -1,8 +1,7 @@
-
 extends Node2D
 
-const SPEED = 50
-const HEALTH = 2
+const SPEED = 100
+const HEALTH = 3
 
 var current_health = HEALTH
 var explosion = false
@@ -11,9 +10,9 @@ func _ready() -> void:
 	$Explosion.stop()
 	$Explosion.visible = false
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if not explosion:
-		global_position.x -= SPEED * delta
+		global_position.x 
 
 func take_damage() -> void:
 	if explosion:
@@ -30,12 +29,12 @@ func explosion_ctrl() -> void:
 		return
 
 	explosion = true
-	$enemy2.queue_free()
+	$enemyboss.queue_free()
 	$Explosion.visible = true
 	$Explosion.play("Explosion")
 	$Explosion/Audio.play()
 
-func _on_enemy_2_body_entered(body: Node2D) -> void:
+func _on_enemyboss_body_entered(body: Node2D) -> void:
 	if body is Player:
 		explosion_ctrl()
 		GLOBAL.credits -= 1
@@ -49,7 +48,7 @@ func _on_enemy_2_body_entered(body: Node2D) -> void:
 			if level != null:
 				level.call_deferred("respawn_player")
 
-func _on_enemy_2_area_entered(area: Area2D) -> void:
+func _on_enemyboss_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Shot"):
 		take_damage()
 		area.queue_free()

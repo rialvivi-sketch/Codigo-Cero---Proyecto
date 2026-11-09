@@ -9,27 +9,28 @@ extends Node2D
 @export var enemy_7 : PackedScene
 @export var enemyboss : PackedScene
 
-const SCORE_TO_UNLOCK = 20000
-const SCORE_TO_UNLOCK_3 = 25000
-const SCORE_TO_BOSS = 30000
+const SCORE_TO_UNLOCK = 15000
+const SCORE_TO_UNLOCK_3 = 20000
+const SCORE_TO_BOSS = 25000
 
 var level_completed = false
 var boss_appeared = false
 
 const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
 
-
 func _ready() -> void:
-	GLOBAL.score = 15000
 	GLOBAL.credits = 1
 	GLOBAL.nivel_actual = "res://Escenas/nivel_5.tscn"
 
-
 func _process(delta) -> void:
 	parallax_bg(delta)
+	$PathSpawn/PathFollow.set_progress($PathSpawn/PathFollow.get_progress() )
 
+	if GLOBAL.score >= SCORE_TO_UNLOCK_3 and not level_completed:
+		level_completed = true
+		get_tree().call_deferred("change_scene_to_file", "res://Escenas/final.tscn")
 	$PathSpawn/PathFollow.set_progress(
-		$PathSpawn/PathFollow.get_progress() + 80 * delta
+		$PathSpawn/PathFollow.get_progress() + 70 * delta
 	)
 
 	if GLOBAL.score >= SCORE_TO_BOSS and not boss_appeared:
