@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b5t1oubnmmh2m"]
 
-[ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/level1.gd" id="1_c6wl6"]
-[ext_resource type="PackedScene" uid="uid://46kgkntlfy4e" path="res://Escenas/gui.tscn" id="2_c6wl6"]
-[ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="2_k5unv"]
-[ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_w707c"]
-[ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="5_ibtyg"]
-[ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="5_w707c"]
+[ext_resource type="Script" uid="uid://c7mh8hhg4haxt" path="res://Scripts/level1.gd" id="1_x8lfd"]
+[ext_resource type="PackedScene" uid="uid://bih2ve4uff1bc" path="res://Escenas/enemy.tscn" id="2_tcbk2"]
+[ext_resource type="PackedScene" uid="uid://46kgkntlfy4e" path="res://Escenas/gui.tscn" id="3_xa3cd"]
+[ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="4_1qlxo"]
+[ext_resource type="Texture2D" uid="uid://h38qo38neib3" path="res://Imagenes/fondos/Fondo.png" id="5_rv3i8"]
+[ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="6_f253d"]
 
 [sub_resource type="Curve2D" id="Curve2D_20qyh"]
 _data = {
@@ -26,15 +26,15 @@ size = Vector2(20, 167)
 size = Vector2(20, 174)
 
 [node name="Leve1" type="Node2D" unique_id=1933223351 groups=["Level"]]
-script = ExtResource("1_c6wl6")
-enemy = ExtResource("2_w707c")
+script = ExtResource("1_x8lfd")
+enemy = ExtResource("2_tcbk2")
 
-[node name="GUI" parent="." unique_id=840462096 instance=ExtResource("2_c6wl6")]
+[node name="GUI" parent="." unique_id=840462096 instance=ExtResource("3_xa3cd")]
 
 [node name="Settings" type="Node" parent="." unique_id=802312014]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=1018737733]
-stream = ExtResource("5_w707c")
+stream = ExtResource("4_1qlxo")
 volume_db = -10.0
 autoplay = true
 
@@ -52,7 +52,7 @@ motion_mirroring = Vector2(272.2, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1495285342]
 position = Vector2(195.54784, 79)
 scale = Vector2(0.78219134, 0.8)
-texture = ExtResource("2_k5unv")
+texture = ExtResource("5_rv3i8")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=1280040434]
 
@@ -86,7 +86,7 @@ position = Vector2(269, -126)
 rotation = 1.5630445
 scale = Vector2(1, -9.346)
 
-[node name="Player" parent="." unique_id=1450505883 instance=ExtResource("5_ibtyg")]
+[node name="Player" parent="." unique_id=1450505883 instance=ExtResource("6_f253d")]
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1561358535]
 
