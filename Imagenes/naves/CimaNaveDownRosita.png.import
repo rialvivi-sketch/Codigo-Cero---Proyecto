@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgyxby1ba7vho"
-path="res://.godot/imported/Nuevo fondo.png-84ef58fb15159e8f3312a029ad8c7f63.ctex"
+uid="uid://b3vsuyy4a0rm3"
+path="res://.godot/imported/CimaNaveDownRosita.png-d641621e09b8de40187d8c7fc79202a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes/EscenaFondo/Nuevo fondo.png"
-dest_files=["res://.godot/imported/Nuevo fondo.png-84ef58fb15159e8f3312a029ad8c7f63.ctex"]
+source_file="res://Imagenes/naves/CimaNaveDownRosita.png"
+dest_files=["res://.godot/imported/CimaNaveDownRosita.png-d641621e09b8de40187d8c7fc79202a6.ctex"]
 
 [params]
 
