@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ceg3674j0bio6" path="res://Scripts/final.gd" id="1_5at5q"]
 [ext_resource type="AudioStream" uid="uid://bd8drmx1t3omf" path="res://Imagenes/make_more_sound-8-bit-video-game-win-level-sound-version-1-145827.mp3" id="2_5at5q"]
 [ext_resource type="Theme" uid="uid://bwcgdtkau5qvj" path="res://settings/determination.tres" id="2_teg0c"]
+[ext_resource type="Texture2D" uid="uid://y33ufdkss87o" path="res://Imagenes/fondos/CimaMenu.png" id="3_2meub"]
 
 [node name="final" type="Node2D" unique_id=281941510]
 script = ExtResource("1_5at5q")
@@ -13,10 +14,10 @@ script = ExtResource("1_5at5q")
 stream = ExtResource("2_5at5q")
 autoplay = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1154349994]
+[node name="ColorRect" type="TextureRect" parent="." unique_id=1088258651]
 offset_right = 273.0
 offset_bottom = 159.0
-color = Color(0.627451, 0.4392157, 1, 1)
+texture = ExtResource("3_2meub")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1879973227]
 offset_left = 26.0
@@ -39,7 +40,7 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_teg0c")
-theme_override_colors/font_color = Color(0.79258275, 0.2299805, 0.35714447, 1)
+theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 38
 text = "FELICIDADES"
@@ -73,7 +74,6 @@ theme = ExtResource("2_teg0c")
 theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
 action_mode = 0
 text = "Menú"
-flat = true
 
 [node name="Exit" type="Button" parent="Botones" unique_id=792567422]
 layout_mode = 2
@@ -82,7 +82,6 @@ size_flags_vertical = 8
 theme = ExtResource("2_teg0c")
 theme_override_colors/font_color = Color(0.8980392, 0.78039217, 0.9647059, 1)
 text = "Salir"
-flat = true
 
 [connection signal="pressed" from="Botones/Resart" to="." method="_on_resart_pressed"]
 [connection signal="pressed" from="Botones/Exit" to="." method="_on_exit_pressed"]

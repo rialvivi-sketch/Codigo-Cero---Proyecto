@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://beloc33jjv4fy" path="res://Escenas/enemy_7.tscn" id="8_lriak"]
 [ext_resource type="PackedScene" uid="uid://cdj6rgd350r6l" path="res://Escenas/enemyboss.tscn" id="9_usymx"]
 [ext_resource type="PackedScene" uid="uid://cnar8gm3fhf3v" path="res://Escenas/gui_5.tscn" id="10_hajek"]
-[ext_resource type="Texture2D" uid="uid://dk5rsf8q1582v" path="res://Imagenes/EscenaFondo/FondoJefe2.png" id="12_xl2eo"]
+[ext_resource type="Texture2D" uid="uid://cjuvwwaoevq7v" path="res://Imagenes/EscenaFondo/FondoJefe2.png" id="12_xl2eo"]
 [ext_resource type="AudioStream" uid="uid://mssrqjhmjaij" path="res://Imagenes/freesound_community-dramatic-synth-echo-43970.mp3" id="14_xl2eo"]
 
 [sub_resource type="Curve2D" id="Curve2D_tglmy"]
@@ -65,8 +65,8 @@ autostart = true
 motion_mirroring = Vector2(272.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1925240281]
-position = Vector2(141.31097, 76.99999)
-scale = Vector2(1.0344782, 1.0124999)
+position = Vector2(141.31097, 80)
+scale = Vector2(1.0344782, 1.0500001)
 texture = ExtResource("12_xl2eo")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=957585823]
