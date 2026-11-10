@@ -1,9 +1,11 @@
+
 extends Node
 
-var score : int = 0
-var credits : int = 1
-var axis : Vector2
-var nave_seleccionada : String = "res://Escenas/Player.tscn"
+var score: int = 0
+var credits: int = 3
+var axis: Vector2
+
+var nave_seleccionada: String = "res://Imagenes/naves/CimaNave.png"
 var nivel_actual: String = "res://Escenas/nivel1.tscn"
 
 func get_axis() -> Vector2:
@@ -15,7 +17,8 @@ func respawn_player() -> void:
 	respawn_player_deferred.call_deferred()
 
 func respawn_player_deferred() -> void:
-	var player_scene = load(nave_seleccionada)
+	var player_scene = load("res://Escenas/Player.tscn")
+
 	if player_scene == null:
 		return
 

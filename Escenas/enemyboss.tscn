@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccumlgo3tn4uj" path="res://Escenas/boss_shot.tscn" id="2_vff3e"]
 [ext_resource type="Texture2D" uid="uid://r03lhrehmmbd" path="res://Imagenes/ExplosionSprites/Explosion2.png" id="3_fhprj"]
 [ext_resource type="Texture2D" uid="uid://cp6blgmmi0rx6" path="res://Imagenes/Jefes/JefeFinal.2png.png" id="3_vff3e"]
+[ext_resource type="PackedScene" uid="uid://ydqqi05avy2y" path="res://Escenas/boss_shot_2.tscn" id="3_yemd0"]
 [ext_resource type="Texture2D" uid="uid://dcgmsrfoa2334" path="res://Imagenes/ExplosionSprites/Explosion3.png" id="4_vff3e"]
 [ext_resource type="Texture2D" uid="uid://baae0a8a33i63" path="res://Imagenes/ExplosionSprites/Explosion4.png" id="5_yemd0"]
 [ext_resource type="Texture2D" uid="uid://ci8mnkfhas1pk" path="res://Imagenes/ExplosionSprites/Explosion5.png" id="6_ye604"]
@@ -53,6 +54,7 @@ animations = [{
 [node name="enemyboss" type="Node2D" unique_id=1418121621]
 script = ExtResource("1_rxu4h")
 boss_shot = ExtResource("2_vff3e")
+boss_shot_2 = ExtResource("3_yemd0")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=937358078 groups=["Boss", "enemy"]]
 collision_layer = 2
