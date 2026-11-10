@@ -47,6 +47,10 @@ func disparar() -> void:
 	if boss_shot == null:
 		return
 
+	$ShootAudio.play()
+
+	# Aquí continúa tu código para crear los proyectiles
+
 	var shot_instance = boss_shot.instantiate()
 
 	get_tree().current_scene.add_child(shot_instance)

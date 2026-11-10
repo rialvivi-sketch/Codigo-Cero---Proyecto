@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cbo543o3ddtyh" path="res://Escenas/enemy_6.tscn" id="7_x8d27"]
 [ext_resource type="PackedScene" uid="uid://beloc33jjv4fy" path="res://Escenas/enemy_7.tscn" id="8_h6bvy"]
 [ext_resource type="PackedScene" uid="uid://ccih8jgt72qe8" path="res://Escenas/gui4.tscn" id="9_x8d27"]
-[ext_resource type="Texture2D" uid="uid://dy72m06ykb6u8" path="res://Imagenes/fondos/Pixel art seamless fantasy space landscape_ Pixelated alien background for 8 bit arcade games.jpg" id="11_x8d27"]
+[ext_resource type="Texture2D" uid="uid://bht4y0nr3rdy6" path="res://Imagenes/EscenaFondo/NuevoFondo4.png" id="11_x8d27"]
 
 [sub_resource type="Curve2D" id="Curve2D_jtaq0"]
 _data = {
@@ -58,8 +58,8 @@ autostart = true
 motion_mirroring = Vector2(272.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=406118528]
-position = Vector2(137.40883, 81)
-scale = Vector2(0.37388903, 0.39130437)
+position = Vector2(136, 84.5)
+scale = Vector2(1.0073528, 1.06875)
 texture = ExtResource("11_x8d27")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=1557377128]

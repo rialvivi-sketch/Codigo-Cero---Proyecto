@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://baae0a8a33i63" path="res://Imagenes/ExplosionSprites/Explosion4.png" id="5_yemd0"]
 [ext_resource type="Texture2D" uid="uid://ci8mnkfhas1pk" path="res://Imagenes/ExplosionSprites/Explosion5.png" id="6_ye604"]
 [ext_resource type="AudioStream" uid="uid://4n2t28uvtbay" path="res://Imagenes/ElevenLabs_Explosión_fuerte_de_bomba_arcade,_sonido_muy_gated,_estallido_súbito_y_staccato,_graves_contundentes.mp3" id="7_ys06v"]
+[ext_resource type="AudioStream" uid="uid://bimmuhwbfqmuo" path="res://Imagenes/mikst656-lasergun-152375.mp3" id="11_yemd0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2jxh"]
 animations = [{
@@ -82,6 +83,9 @@ animation = &"Explosion"
 stream = ExtResource("7_ys06v")
 
 [node name="ShootPoint" type="Marker2D" parent="." unique_id=1703680330]
+
+[node name="ShootAudio" type="AudioStreamPlayer" parent="." unique_id=1634462173]
+stream = ExtResource("11_yemd0")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_enemyboss_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_enemyboss_body_entered"]
