@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ccumlgo3tn4uj"]
+
+[ext_resource type="Script" uid="uid://c6qp256pgee7m" path="res://boss_shot.gd" id="1_wd37c"]
+[ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="2_7x6k5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x6k5"]
+size = Vector2(18, 8)
+
+[node name="BossShot" type="Area2D" unique_id=1920357781 groups=["player"]]
+script = ExtResource("1_wd37c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=683010576]
+texture = ExtResource("2_7x6k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079100358]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_7x6k5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1142488453]
+rect = Rect2(-8, -4, 18, 8)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

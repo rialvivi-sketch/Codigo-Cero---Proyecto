@@ -14,8 +14,6 @@ const SCORE_TO_LEVEL3 = 15000
 
 var level_completed = false
 
-const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
-
 
 func _ready() -> void:
 	GLOBAL.credits = 1

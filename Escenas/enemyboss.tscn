@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02bjv"]
-size = Vector2(53, 87.5)
+size = Vector2(50.5, 140)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h5tt6"]
 animations = [{
@@ -56,22 +56,21 @@ animations = [{
 [node name="enemyboss" type="Node2D" unique_id=1418121621]
 script = ExtResource("1_rxu4h")
 
-[node name="enemyboss" type="Area2D" parent="." unique_id=937358078 groups=["Boss", "enemy"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=937358078 groups=["Boss", "enemy"]]
 collision_layer = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemyboss" unique_id=1215806736]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1215806736]
 position = Vector2(-1, 0)
-scale = Vector2(0.556681, 0.5939683)
 sprite_frames = SubResource("SpriteFrames_j2jxh")
 animation = &"fly"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyboss" unique_id=71787710]
-position = Vector2(-1, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=71787710]
+position = Vector2(-2.25, -1)
 shape = SubResource("RectangleShape2D_02bjv")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="enemyboss" unique_id=465700015]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Area2D" unique_id=465700015]
 position = Vector2(-7, 13)
-rect = Rect2(-21, -54, 52, 85)
+rect = Rect2(-21, -81, 52, 137)
 
 [node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=655814557]
 position = Vector2(-4.7683716e-07, -12.5)
@@ -82,7 +81,8 @@ animation = &"Explosion"
 [node name="Audio" type="AudioStreamPlayer" parent="Explosion" unique_id=1689530486]
 stream = ExtResource("7_ys06v")
 
-[connection signal="area_entered" from="enemyboss" to="." method="_on_enemyboss_area_entered"]
-[connection signal="body_entered" from="enemyboss" to="." method="_on_enemyboss_body_entered"]
-[connection signal="screen_exited" from="enemyboss/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_enemyboss_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_enemyboss_body_entered"]
+[connection signal="screen_exited" from="Area2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="Explosion" to="." method="_on_explosion_animation_finished"]
 [connection signal="finished" from="Explosion/Audio" to="." method="_on_audio_finished"]

@@ -7,7 +7,6 @@ const SCORE_TO_LEVEL2 = 1500
 
 var level_completed = false
 
-
 func _ready() -> void:
 	GLOBAL.score = 0
 	GLOBAL.credits = 1
