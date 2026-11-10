@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ydqqi05avy2y"]
 
-[ext_resource type="Script" uid="uid://wegwngogafn1" path="res://boss_shot_2.gd" id="1_fexdh"]
+[ext_resource type="Script" uid="uid://wegwngogafn1" path="res://Scripts/boss_shot_2.gd" id="1_fexdh"]
 [ext_resource type="Texture2D" uid="uid://cgd82gjheaebl" path="res://Imagenes/enemigos/enemigoJefe2.png" id="2_lyt65"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ie8e6"]

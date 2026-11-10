@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPEED = 60
+const SPEED = 110
 const HEALTH = 1
 
 var current_health = HEALTH
@@ -29,26 +29,33 @@ func explosion_ctrl() -> void:
 		return
 
 	explosion = true
-	$Area2D.queue_free()
+	
+	$Area2D/AnimatedSprite2D.visible = false
+
+	$Area2D/CollisionShape2D.set_deferred("disabled", true)
+
+	$Explosion.visible = true
 	$Explosion.play("Explosion")
 	$Explosion/Audio.play()
+				
+func _on_audio_finished() -> void:
+	queue_free()
 
-func _on_area_2d_body_entered(body):
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		explosion_ctrl()
 		GLOBAL.credits -= 1
 
 		if GLOBAL.credits <= 0:
 			get_tree().call_deferred("change_scene_to_file", "res://Escenas/game_over.tscn")
 		else:
-			var level = get_tree().get_first_node_in_group("Level")
 			body.queue_free()
+			GLOBAL.respawn_player()
 
-			if level != null:
-				level.call_deferred("respawn_player")
 
-func _on_audio_finished() -> void:
-	queue_free()
-
-func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	queue_free()
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Shot"):
+		take_damage()
+		area.queue_free()

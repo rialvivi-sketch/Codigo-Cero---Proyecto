@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccumlgo3tn4uj"]
 
 [ext_resource type="Script" uid="uid://c6qp256pgee7m" path="res://Scripts/boss_shot.gd" id="1_2cqf6"]
-[ext_resource type="Texture2D" uid="uid://ccwpppgtjto5r" path="res://Imagenes/enemigos/enemigoJefe1.png" id="2_2cqf6"]
+[ext_resource type="Texture2D" uid="uid://cgd82gjheaebl" path="res://Imagenes/enemigos/enemigoJefe2.png" id="2_2cqf6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
 animations = [{
