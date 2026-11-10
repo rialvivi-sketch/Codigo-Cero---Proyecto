@@ -52,7 +52,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5mbm"]
 size = Vector2(40.25, 18)
 
-[node name="Player" type="CharacterBody2D" unique_id=1450505883]
+[node name="Player" type="CharacterBody2D" unique_id=1450505883 groups=["player"]]
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_kwdw2")

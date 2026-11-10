@@ -35,6 +35,7 @@ project/assembly_name="Codigo Cero"
 
 Level=""
 enemy=""
+player=""
 
 [physics]
 

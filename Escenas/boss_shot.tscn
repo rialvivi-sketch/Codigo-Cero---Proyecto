@@ -1,16 +1,27 @@
 [gd_scene format=3 uid="uid://ccumlgo3tn4uj"]
 
-[ext_resource type="Script" uid="uid://c6qp256pgee7m" path="res://boss_shot.gd" id="1_wd37c"]
+[ext_resource type="Script" uid="uid://c6qp256pgee7m" path="res://Scripts/boss_shot.gd" id="1_2cqf6"]
 [ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="2_7x6k5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7x6k5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x6k5"]
 size = Vector2(18, 8)
 
 [node name="BossShot" type="Area2D" unique_id=1920357781 groups=["player"]]
-script = ExtResource("1_wd37c")
+script = ExtResource("1_2cqf6")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=683010576]
-texture = ExtResource("2_7x6k5")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1797184663]
+sprite_frames = SubResource("SpriteFrames_7p23x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079100358]
 position = Vector2(1, 0)
