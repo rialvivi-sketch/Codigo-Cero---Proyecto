@@ -10,7 +10,6 @@ const SCORE_TO_LEVEL2 = 5000
 
 var level_completed = false
 
-const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
 
 
 func _ready() -> void:

@@ -13,18 +13,6 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0klr0"]
-size = Vector2(281, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p23x"]
-size = Vector2(558, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yid"]
-size = Vector2(20, 167)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5mbm"]
-size = Vector2(20, 174)
-
 [node name="Leve1" type="Node2D" unique_id=1933223351 groups=["Level"]]
 script = ExtResource("1_c6wl6")
 enemy = ExtResource("2_w707c")
@@ -84,30 +72,6 @@ curve = SubResource("Curve2D_20qyh")
 position = Vector2(269, -126)
 rotation = 1.5630445
 scale = Vector2(1, -9.346)
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1561358535]
-
-[node name="LimiteInferior" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1784164700]
-position = Vector2(129.5, 159)
-shape = SubResource("RectangleShape2D_0klr0")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1900187386]
-
-[node name="LimiteSuperior" type="CollisionShape2D" parent="StaticBody2D" unique_id=335529334]
-position = Vector2(269, 0)
-shape = SubResource("RectangleShape2D_7p23x")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1261405526]
-
-[node name="LimiteIzq" type="CollisionShape2D" parent="StaticBody2D3" unique_id=479332863]
-position = Vector2(0, 73.5)
-shape = SubResource("RectangleShape2D_v8yid")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1688584565]
-
-[node name="LimiteDerecho" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1237486469]
-position = Vector2(281, 83)
-shape = SubResource("RectangleShape2D_w5mbm")
 
 [node name="Player" parent="." unique_id=1450505883 instance=ExtResource("6_c6wl6")]
 

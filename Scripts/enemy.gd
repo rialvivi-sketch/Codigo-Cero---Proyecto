@@ -8,6 +8,7 @@ var explosion = false
 
 func _ready() -> void:
 	$Explosion.stop()
+	$Explosion.visible = false
 
 func _process(delta) -> void:
 	if not explosion:

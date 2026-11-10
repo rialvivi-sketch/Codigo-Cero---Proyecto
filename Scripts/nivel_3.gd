@@ -12,12 +12,10 @@ const SCORE_TO_LEVEL3 = 9000
 
 var level_completed = false
 
-const PLAYER_SCENE = preload("res://Escenas/Player.tscn")
 
 
 func _ready() -> void:
-	GLOBAL.score = 5000
-	GLOBAL.credits = 1
+	GLOBAL.credits =1
 	GLOBAL.nivel_actual = "res://Escenas/nivel_3.tscn"
 
 func _process(delta) -> void:
@@ -38,7 +36,7 @@ func _on_timer_timeout():
 	var enemy_scene = enemy
 
 	if GLOBAL.score >= SCORE_TO_UNLOCK_3:
-		var random_enemy = randi_range(0, 2)
+		var random_enemy = randi_range(0, 4)
 
 		match random_enemy:
 			0:

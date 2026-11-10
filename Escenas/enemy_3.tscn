@@ -76,7 +76,7 @@ frame = 5
 [node name="Audio" type="AudioStreamPlayer" parent="Explosion" unique_id=1308722842]
 stream = ExtResource("8_bdpu2")
 
-[connection signal="area_entered" from="enemy3" to="." method="_on_enemy_2_area_entered"]
-[connection signal="body_entered" from="enemy3" to="." method="_on_enemy_2_body_entered"]
+[connection signal="area_entered" from="enemy3" to="." method="_on_enemy_3_area_entered"]
+[connection signal="body_entered" from="enemy3" to="." method="_on_enemy_3_body_entered"]
 [connection signal="screen_exited" from="enemy3/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="finished" from="Explosion/Audio" to="." method="_on_audio_finished"]
