@@ -19,8 +19,9 @@ var level_completed = false
 var boss_appeared = false
 
 func _ready() -> void:
-	GLOBAL.credits = 1
+	GLOBAL.credits = 3
 	GLOBAL.nivel_actual = "res://Escenas/nivel_5.tscn"
+	$Settings/MusicaNormal.play()
 
 func _process(delta) -> void:
 	parallax_bg(delta)
@@ -32,6 +33,10 @@ func _process(delta) -> void:
 	if GLOBAL.score >= SCORE_TO_BOSS and not boss_appeared:
 		boss_appeared = true
 		$Settings/Timer.stop()
+
+		# Cambiar la música al aparecer el jefe
+		$Settings/MusicaNormal.stop()
+		$MusicaBoss.play()
 
 		if enemyboss != null:
 			var boss_instance = enemyboss.instantiate()
@@ -83,3 +88,10 @@ func _on_timer_timeout():
 	var enemy_instance = enemy_scene.instantiate()
 	enemy_instance.global_position = $PathSpawn/PathFollow.global_position
 	add_child(enemy_instance)
+
+func _on_musica_boss_finished() -> void:
+	# Regresar a la música normal
+	$Settings/MusicaNormal.play()
+
+func _on_musica_normal_finished() -> void:
+	pass

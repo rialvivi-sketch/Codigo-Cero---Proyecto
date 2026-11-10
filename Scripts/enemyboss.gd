@@ -1,7 +1,9 @@
 extends Node2D
 
 @export var boss_shot: PackedScene
+@export var boss_shot_2: PackedScene
 
+var tipo_disparo := 0
 const SPEED = 100
 const HEALTH = 50
 const AMPLITUDE = 70.0
@@ -45,19 +47,27 @@ func disparar() -> void:
 	if boss_shot == null:
 		return
 
-	var player = get_tree().get_first_node_in_group("Player")
+	$ShootAudio.play()
 
-	if player == null:
-		player = get_tree().get_first_node_in_group("player")
-
-	if player == null:
-		return
+	# Aquí continúa tu código para crear los proyectiles
 
 	var shot_instance = boss_shot.instantiate()
+
 	get_tree().current_scene.add_child(shot_instance)
 
 	shot_instance.global_position = $ShootPoint.global_position
-	shot_instance.set_direction(player.global_position)
+	shot_instance.set_direction_vector(Vector2.LEFT)
+
+func crear_disparo(escena: PackedScene, direccion: Vector2) -> void:
+	if escena == null:
+		return
+
+	var shot_instance = escena.instantiate()
+
+	get_tree().current_scene.add_child(shot_instance)
+
+	shot_instance.global_position = $ShootPoint.global_position
+	shot_instance.set_direction_vector(direccion)
 
 func take_damage() -> void:
 	if explosion:

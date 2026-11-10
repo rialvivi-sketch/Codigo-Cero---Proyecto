@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://cvtnkk2abj8c8" path="res://Imagenes/nickpanek-8-bit-chiptune-action-music-for-video-games-329940.mp3" id="3_qgabm"]
 [ext_resource type="PackedScene" uid="uid://df30o5wjbushe" path="res://Escenas/enemy_2.tscn" id="3_xl2eo"]
 [ext_resource type="PackedScene" uid="uid://dlf7tvheowxqq" path="res://Escenas/enemy_3.tscn" id="4_w8nlb"]
-[ext_resource type="Texture2D" uid="uid://bpx3lcwlkm5eu" path="res://Imagenes/EscenaFondo/NuevoFondo3.png" id="4_yilxl"]
 [ext_resource type="PackedScene" uid="uid://bp7mm8tlk4tu0" path="res://Escenas/Player.tscn" id="5_2hg6n"]
 [ext_resource type="PackedScene" uid="uid://3wnoay8p8xy8" path="res://Escenas/nivel_4.tscn" id="5_54ncu"]
 [ext_resource type="PackedScene" uid="uid://ch5kgr8jaaynq" path="res://Escenas/enemy_5.tscn" id="6_boeo8"]
@@ -13,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://beloc33jjv4fy" path="res://Escenas/enemy_7.tscn" id="8_lriak"]
 [ext_resource type="PackedScene" uid="uid://cdj6rgd350r6l" path="res://Escenas/enemyboss.tscn" id="9_usymx"]
 [ext_resource type="PackedScene" uid="uid://cnar8gm3fhf3v" path="res://Escenas/gui_5.tscn" id="10_hajek"]
+[ext_resource type="Texture2D" uid="uid://dk5rsf8q1582v" path="res://Imagenes/EscenaFondo/FondoJefe2.png" id="12_xl2eo"]
+[ext_resource type="AudioStream" uid="uid://mssrqjhmjaij" path="res://Imagenes/freesound_community-dramatic-synth-echo-43970.mp3" id="14_xl2eo"]
 
 [sub_resource type="Curve2D" id="Curve2D_tglmy"]
 _data = {
@@ -47,7 +48,7 @@ enemyboss = ExtResource("9_usymx")
 
 [node name="Settings" type="Node" parent="." unique_id=135546739]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings" unique_id=1073530497]
+[node name="MusicaNormal" type="AudioStreamPlayer" parent="Settings" unique_id=1073530497]
 stream = ExtResource("3_qgabm")
 volume_db = -10.0
 autoplay = true
@@ -64,9 +65,9 @@ autostart = true
 motion_mirroring = Vector2(272.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Back/ParallaxLayer" unique_id=1925240281]
-position = Vector2(139.31099, 80.5)
-scale = Vector2(1.0197723, 1.05625)
-texture = ExtResource("4_yilxl")
+position = Vector2(139.81097, 76.99999)
+scale = Vector2(1.0234487, 1.0124999)
+texture = ExtResource("12_xl2eo")
 
 [node name="Edificios" type="ParallaxBackground" parent="Fondo" unique_id=957585823]
 
@@ -126,4 +127,8 @@ shape = SubResource("RectangleShape2D_xl2eo")
 
 [node name="Player" parent="." unique_id=1450505883 instance=ExtResource("5_2hg6n")]
 
+[node name="MusicaBoss" type="AudioStreamPlayer" parent="." unique_id=1311885233]
+stream = ExtResource("14_xl2eo")
+
 [connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="MusicaBoss" to="." method="_on_musica_boss_finished"]

@@ -7,6 +7,9 @@ var direction := Vector2.LEFT
 func set_direction(target_position: Vector2) -> void:
 	direction = global_position.direction_to(target_position)
 
+func set_direction_vector(new_direction: Vector2) -> void:
+	direction = new_direction.normalized()
+
 func _process(delta: float) -> void:
 	global_position += direction * speed * delta
 

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ccumlgo3tn4uj"]
 
 [ext_resource type="Script" uid="uid://c6qp256pgee7m" path="res://Scripts/boss_shot.gd" id="1_2cqf6"]
-[ext_resource type="Texture2D" uid="uid://d0twpng5ogi7x" path="res://Imagenes/Balas/Balas.png" id="2_7x6k5"]
+[ext_resource type="Texture2D" uid="uid://ccwpppgtjto5r" path="res://Imagenes/enemigos/enemigoJefe1.png" id="2_2cqf6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7p23x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7x6k5")
+"texture": ExtResource("2_2cqf6")
 }],
 "loop": 1,
 "name": &"default",
