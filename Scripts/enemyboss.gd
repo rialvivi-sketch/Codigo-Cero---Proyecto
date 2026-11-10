@@ -48,6 +48,9 @@ func disparar() -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 
 	if player == null:
+		player = get_tree().get_first_node_in_group("player")
+
+	if player == null:
 		return
 
 	var shot_instance = boss_shot.instantiate()
@@ -55,7 +58,6 @@ func disparar() -> void:
 
 	shot_instance.global_position = $ShootPoint.global_position
 	shot_instance.set_direction(player.global_position)
-
 
 func take_damage() -> void:
 	if explosion:

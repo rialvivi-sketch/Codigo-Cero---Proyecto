@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		GLOBAL.credits -= 1
+		body.queue_free()
 		queue_free()
 
 		if GLOBAL.credits <= 0:
@@ -21,11 +22,7 @@ func _on_body_entered(body: Node2D) -> void:
 				"res://Escenas/game_over.tscn"
 			)
 		else:
-			var level = get_tree().get_first_node_in_group("Level")
-			body.queue_free()
-
-			if level != null:
-				level.call_deferred("respawn_player")
+			GLOBAL.respawn_player()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()

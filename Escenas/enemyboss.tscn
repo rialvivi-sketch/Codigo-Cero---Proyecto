@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cdj6rgd350r6l"]
 
 [ext_resource type="Script" uid="uid://wk0pwi72spua" path="res://Scripts/enemyboss.gd" id="1_rxu4h"]
-[ext_resource type="Texture2D" uid="uid://cq18yqhtubug5" path="res://Imagenes/Jefes/JefeFinal.png" id="2_fhprj"]
 [ext_resource type="Texture2D" uid="uid://ddfpycx60dcsd" path="res://Imagenes/ExplosionSprites/Explosion1.png" id="2_rxu4h"]
+[ext_resource type="PackedScene" uid="uid://ccumlgo3tn4uj" path="res://Escenas/boss_shot.tscn" id="2_vff3e"]
 [ext_resource type="Texture2D" uid="uid://r03lhrehmmbd" path="res://Imagenes/ExplosionSprites/Explosion2.png" id="3_fhprj"]
 [ext_resource type="Texture2D" uid="uid://cp6blgmmi0rx6" path="res://Imagenes/Jefes/JefeFinal.2png.png" id="3_vff3e"]
 [ext_resource type="Texture2D" uid="uid://dcgmsrfoa2334" path="res://Imagenes/ExplosionSprites/Explosion3.png" id="4_vff3e"]
@@ -13,9 +13,6 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2jxh"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_fhprj")
-}, {
 "duration": 1.0,
 "texture": ExtResource("3_vff3e")
 }],
@@ -55,6 +52,7 @@ animations = [{
 
 [node name="enemyboss" type="Node2D" unique_id=1418121621]
 script = ExtResource("1_rxu4h")
+boss_shot = ExtResource("2_vff3e")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=937358078 groups=["Boss", "enemy"]]
 collision_layer = 2
@@ -80,6 +78,8 @@ animation = &"Explosion"
 
 [node name="Audio" type="AudioStreamPlayer" parent="Explosion" unique_id=1689530486]
 stream = ExtResource("7_ys06v")
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=1703680330]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_enemyboss_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_enemyboss_body_entered"]
