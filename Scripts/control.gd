@@ -2,7 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 @export var shot : PackedScene
-
 @onready var screensize  = get_viewport_rect().size
 
 const SPEED = 80
@@ -12,7 +11,7 @@ func _process (_delta):
 	motion_ctrl()
 	
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept") or Input.is_action_pressed("Disparar"):
 		shoot_ctrl()
 		
 func anim_ctrl() -> void:
